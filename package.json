@@ -41,7 +41,7 @@
     "build": "react-scripts build",
     "codegen": "graphql-codegen && prettier --loglevel silent -u -w ./src/**/*",
     "deploy": "gh-pages -d build",
-    "predeploy": "build",
+    "predeploy": "yarn build",
     "start": "react-scripts start"
   },
   "version": "0.1.0"
