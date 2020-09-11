@@ -25,13 +25,10 @@ type Props =
 export const Summary: FC<Props> = ({ continentName, countryName, countrySummary }) => {
   if (continentName) {
     return (
-      <>
-        <div className={styles.continent}>
-          <h2>{countryName}</h2>
-          <h3>{continentName}</h3>
-        </div>
-        <h4>Other countries in {continentName}</h4>
-      </>
+      <div className={styles.continent}>
+        <h2>{countryName}</h2>
+        <h3>{continentName}</h3>
+      </div>
     )
   }
 

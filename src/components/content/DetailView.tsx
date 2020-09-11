@@ -45,16 +45,19 @@ export const DetailView: FC<Props> = ({ countryCode, onClickOutside }) => {
     <div className={styles.detailView} ref={clickOutsideRef}>
       <Flag countryCode={countryCode} />
       <Summary continentName={continent.name} countryName={name} />
-      {firstThree.map(({ code, name, ...countryFacts }) => {
-        const summary = summarize(countryFacts)
+      <div className={styles.miniResults}>
+        <h4>Other countries in {continent.name}</h4>
+        {firstThree.map(({ code, name, ...countryFacts }) => {
+          const summary = summarize(countryFacts)
 
-        return (
-          <ContentCard key={name} look="detail">
-            <Flag countryCode={code} />
-            <Summary countryName={name} countrySummary={summary} />
-          </ContentCard>
-        )
-      })}
+          return (
+            <ContentCard key={name} look="detail">
+              <Flag countryCode={code} />
+              <Summary countryName={name} countrySummary={summary} />
+            </ContentCard>
+          )
+        })}
+      </div>
       <Tally relatedCountries={relatedCountries.length} />
     </div>
   )
