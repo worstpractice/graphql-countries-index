@@ -1,0 +1,21 @@
+.continent {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  justify-content: space-between;
+}
+
+.country {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding-bottom: 10px;
+  padding-top: 20px;
+}
+
+@media only screen and (max-width: 600px) {
+  .continent {
+    gap: 5px;
+  }
+}

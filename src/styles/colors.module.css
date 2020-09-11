@@ -1,0 +1,12 @@
+:root {
+  --color-background: rgb(61, 68, 91);
+  --color-background-fullscreen-fade: rgba(0, 0, 0, 0.66);
+  --color-background-gradient-bottom: rgb(41, 48, 67);
+  --color-background-gradient-top: rgb(61, 68, 91, 0.75);
+  --color-background-interactable: rgb(94, 104, 136);
+  --color-font-headline: rgb(207, 215, 235);
+  --color-font-paragraph: rgb(236, 238, 254);
+  --color-hover-card: rgb(77, 86, 113);
+  --color-hover-scrollbar: rgb(122, 132, 164);
+  --color-transparent: rgba(0, 0, 0, 0);
+}

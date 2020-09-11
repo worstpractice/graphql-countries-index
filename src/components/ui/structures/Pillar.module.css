@@ -1,0 +1,28 @@
+.big {
+  background: var(--color-background);
+  box-shadow: var(--shadow);
+  display: none;
+  grid-area: big;
+  z-index: 1;
+}
+
+.small {
+  background: var(--color-background);
+  box-shadow: var(--shadow);
+  display: none;
+  grid-area: small;
+  z-index: 1;
+}
+
+@media only screen and (min-width: 800px) {
+  .big {
+    display: block;
+  }
+
+  .small {
+    display: block;
+  }
+}
+
+@import "../../../styles/colors.module.css";
+@import "../../../styles/shadows.module.css";

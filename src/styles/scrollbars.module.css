@@ -1,0 +1,18 @@
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  border-radius: 50px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-background-interactable);
+  border-radius: 50px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-hover-scrollbar);
+}
+
+@import "./colors.module.css";

@@ -1,0 +1,26 @@
+.bottom {
+  background-color: var(--color-background-gradient-bottom);
+  bottom: 0;
+  height: 40%;
+  position: absolute;
+  right: 0;
+  width: 100%;
+  z-index: var(--altitude-above);
+}
+
+.top {
+  background-image: linear-gradient(
+    to bottom,
+    var(--color-background-gradient-top),
+    var(--color-background-gradient-bottom)
+  );
+  height: 60%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  z-index: var(--altitude-above);
+}
+
+@import "../../../styles/altitudes.module.css";
+@import "../../../styles/colors.module.css";

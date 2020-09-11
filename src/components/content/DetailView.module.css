@@ -1,0 +1,30 @@
+.detailView {
+  align-items: center;
+  background-color: var(--color-background);
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  gap: 2.5vh;
+  padding-bottom: 33px;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-top: 33px;
+  width: 50vh;
+}
+
+.flag {
+  object-fit: contain;
+}
+
+@media only screen and (max-width: 600px) {
+  .detailView {
+    gap: 15px;
+    width: 87.5vw;
+  }
+
+  .flag {
+    width: 40vw;
+  }
+}
+
+@import "../../styles/colors.module.css";

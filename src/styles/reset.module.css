@@ -1,0 +1,14 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  font-family: "Inter", "Roboto", sans-serif;
+  margin: 0;
+  overflow: hidden hidden;
+  padding: 0;
+  text-rendering: optimizeLegibility;
+}
+
+@import "./colors.module.css";
+@import "./fonts.module.css";
+@import "./scrollbars.module.css";

@@ -1,39 +1,48 @@
 {
-  "name": "cssboi",
-  "version": "0.1.0",
-  "private": true,
+  "browserslist": [
+    "last 1 chrome version",
+    "last 1 firefox version",
+    "last 1 safari version"
+  ],
   "dependencies": {
-    "@testing-library/jest-dom": "^4.2.4",
-    "@testing-library/react": "^9.3.2",
-    "@testing-library/user-event": "^7.1.2",
-    "@types/jest": "^24.0.0",
-    "@types/node": "^12.0.0",
-    "@types/react": "^16.9.0",
-    "@types/react-dom": "^16.9.0",
-    "react": "^16.13.1",
-    "react-dom": "^16.13.1",
-    "react-scripts": "3.4.3",
-    "typescript": "~3.7.2"
+    "@apollo/client": "^3.1.5",
+    "graphql": "^15.3.0",
+    "normalize.css": "^8.0.1",
+    "react": "17.0.0-rc.1",
+    "react-dom": "17.0.0-rc.1"
   },
-  "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+  "devDependencies": {
+    "@graphql-codegen/cli": "1.17.8",
+    "@graphql-codegen/typescript": "^1.17.9",
+    "@graphql-codegen/typescript-operations": "^1.17.8",
+    "@graphql-codegen/typescript-react-apollo": "^2.0.6",
+    "@types/node": "14.10.0",
+    "@types/react": "^16.9.49",
+    "@types/react-dom": "^16.9.8",
+    "gh-pages": "^3.1.0",
+    "htmlhint": "^0.14.1",
+    "prettier": "^2.1.1",
+    "react-scripts": "3.4.3",
+    "stylelint": "^13.7.0",
+    "stylelint-config-standard": "^20.0.0",
+    "stylelint-css-modules": "^1.2.0-globals",
+    "stylelint-declaration-block-no-ignored-properties": "^2.3.0",
+    "stylelint-order": "^4.1.0",
+    "typescript": "~4.0.2"
   },
   "eslintConfig": {
     "extends": "react-app"
   },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
-  }
+  "homepage": "http://worstpractice.github.io/graphql-countries-index",
+  "license": "MIT",
+  "name": "graphql-countries-index",
+  "private": true,
+  "scripts": {
+    "build": "react-scripts build",
+    "codegen": "graphql-codegen && prettier --loglevel silent -u -w ./src/**/*",
+    "deploy": "gh-pages -d build",
+    "predeploy": "build",
+    "start": "react-scripts start"
+  },
+  "version": "0.1.0"
 }

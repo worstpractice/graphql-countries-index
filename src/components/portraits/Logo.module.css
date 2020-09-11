@@ -1,0 +1,15 @@
+.link {
+  display: inline-block;
+  height: max-content;
+}
+
+.logo {
+  display: inline-block;
+  height: 33px;
+}
+
+@media only screen and (max-width: 500px) {
+  .logo {
+    margin-top: 5px;
+  }
+}

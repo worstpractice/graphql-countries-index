@@ -1,0 +1,29 @@
+.main {
+  background: var(--color-transparent);
+  grid-area: main;
+  margin-bottom: 7.5%;
+  margin-left: 10%;
+  margin-right: 10%;
+  margin-top: 6.6%;
+  z-index: 1;
+}
+
+@media only screen and (max-width: 500px) {
+  .main {
+    margin-bottom: 5%;
+    margin-left: 5%;
+    margin-right: 5%;
+    margin-top: 0;
+  }
+}
+
+@media only screen and (min-width: 1000px) {
+  .main {
+    margin-bottom: 75px;
+    margin-left: 100px;
+    margin-right: 100px;
+    margin-top: 66px;
+  }
+}
+
+@import "../../../styles/colors.module.css";

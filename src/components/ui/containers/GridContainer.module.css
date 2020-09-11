@@ -1,0 +1,33 @@
+.gridContainer {
+  display: grid;
+  grid-template-areas:
+    "header"
+    "main";
+  grid-template-columns: 100%;
+  grid-template-rows: 75px 1fr;
+  height: 100vh;
+  width: 100vw;
+}
+
+@media only screen and (min-width: 800px) {
+  .gridContainer {
+    grid-template-areas:
+      "header header header"
+      "small main big";
+    grid-template-columns: 100px 1fr 100px;
+  }
+}
+
+@media only screen and (min-width: 1000px) {
+  .gridContainer {
+    grid-template-columns: 100px 1fr 200px;
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  .gridContainer {
+    grid-template-columns: 100px 1fr 300px;
+  }
+}
+
+@import "../../../styles/colors.module.css";

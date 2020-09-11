@@ -1,0 +1,42 @@
+.result {
+  align-content: flex-start;
+  background: var(--color-transparent);
+  border-radius: 5px;
+  column-gap: 15px;
+  display: flex;
+  flex-wrap: wrap;
+  height: 100%;
+  overflow: hidden auto;
+  padding-bottom: 80px;
+  row-gap: 15px;
+}
+
+@media only screen and (max-width: 500px) {
+  .result {
+    flex: 6;
+  }
+}
+
+@media only screen and (min-width: 1400px) {
+  .result {
+    display: grid;
+    grid-auto-flow: dense;
+    grid-template-areas: "column1 column2";
+  }
+}
+
+@media only screen and (min-width: 1900px) {
+  .result {
+    display: grid;
+    grid-template-areas: "column1 column2 column3";
+  }
+}
+
+@media only screen and (min-width: 2300px) {
+  .result {
+    display: grid;
+    grid-template-areas: "column1 column2 column3 column4";
+  }
+}
+
+@import "../../styles/colors.module.css";

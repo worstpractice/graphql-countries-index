@@ -1,0 +1,33 @@
+schema: schema.graphql
+documents: ./src/api/**/*.tsx
+generates:
+  ./src/typings/generated/index.d.ts:
+    plugins:
+      - typescript
+      - typescript-operations
+    config:
+      dedupeOperationSuffix: true
+      enumsAsTypes: true
+      enumsAsConst: true
+      flattenGeneratedTypes: true
+      immutableTypes: false
+      noExport: false
+      skipTypename: true
+      useTypeImports: true
+
+  ./src/hooks/generated/index.tsx:
+    plugins:
+      - typescript-react-apollo
+    config:
+      dedupeOperationSuffix: true
+      enumsAsTypes: true
+      enumsAsConst: true
+      flattenGeneratedTypes: true
+      immutableTypes: false
+      skipTypename: true
+      useTypeImports: true
+      withComponent: false
+      withHOC: false
+      withHooks: true
+      withMutationFn: true
+      withRefetchFn: true
