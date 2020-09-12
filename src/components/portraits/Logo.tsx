@@ -1,4 +1,4 @@
-import { ReactComponent as LogoSVG } from "assets/logo.svg";
+import logo from "assets/images/logo.svg";
 import { useAbsoluteUrl } from "hooks/useAbsoluteUrl";
 import React from "react";
 import type { FC } from "typings/FC";
@@ -14,7 +14,7 @@ export const Logo: FC<Props> = ({ href = "https://learn2esport.com/" }) => {
   return (
     <div>
       <a className={styles.link} href={href} target="_blank" rel="noopener noreferrer">
-        <LogoSVG className={styles.logo} title="Learn2Esports logo"></LogoSVG>
+        <img className={styles.logo} src={logo} alt="Learn2Esports logo" />
       </a>
     </div>
   );

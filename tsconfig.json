@@ -37,7 +37,7 @@
     "suppressImplicitAnyIndexErrors": false,
     "target": "ESNext"
   },
-  "include": ["src"],
+  "include": ["src", "public/flags"],
   "typeAcquisition": {
     "enable": true
   }
