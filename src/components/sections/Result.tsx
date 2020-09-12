@@ -16,7 +16,7 @@ type Props = {
 export const Result: FC<Props> = ({ onClick, searchString }) => {
   const { client, data, error, loading } = useCountriesQuery();
 
-  // Short-circuiting in order of fastest-to-check.
+  // Short-circuit in order of fastest-to-check.
   if (!searchString || loading || error || !data) {
     return <section className={styles.result} />;
   }
