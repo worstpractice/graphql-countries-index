@@ -6,7 +6,6 @@ import { Flag } from "components/portraits/Flag";
 import { useCountriesQuery } from "hooks/generated";
 import React from "react";
 import type { FC } from "typings/FC";
-import { summarize } from "utils/summarize";
 import styles from "./Result.module.css";
 
 type Props = {
@@ -17,19 +16,19 @@ type Props = {
 export const Result: FC<Props> = ({ onClick, searchString }) => {
   const { client, data, error, loading } = useCountriesQuery();
 
-  // Short-circuit in order of quickest-to-check.
+  // Short-circuiting in order of fastest-to-check.
   if (!searchString || loading || error || !data) {
     return <section className={styles.result} />;
   }
 
   const { countries } = data;
 
-  const matches = countries.filter(({ name }) => {
+  const matches = countries.filter(function byInitial({ name }) {
     return name.toLowerCase().startsWith(searchString);
   });
 
-  const sortedMatches = matches.sort((a, b) => {
-    return a.name === b.name ? 0 : a.name < b.name ? -1 : 1;
+  const sortedMatches = matches.sort(function inAlphabeticalOrder({ name: a }, { name: b }) {
+    return a === b ? 0 : a < b ? -1 : 1;
   });
 
   return (
@@ -37,16 +36,18 @@ export const Result: FC<Props> = ({ onClick, searchString }) => {
       <Tally countries={countries.length} matches={matches.length} />
       <section className={styles.result}>
         {sortedMatches.map(({ code, name, ...countryFacts }) => {
-          const summary = summarize(countryFacts);
+          const handleClick = () => {
+            onClick(code);
+          };
 
           const prefetchCountryData = () => {
             client.query({ query: Country, variables: { code } });
           };
 
           return (
-            <ContentCard look="overview" onClick={() => onClick(code)} onMouseOver={prefetchCountryData} key={name}>
+            <ContentCard look="overview" onClick={handleClick} onMouseOver={prefetchCountryData} key={code}>
               <Flag countryCode={code} />
-              <Summary countryName={name} countrySummary={summary} />
+              <Summary country={name} facts={countryFacts} />
             </ContentCard>
           );
         })}

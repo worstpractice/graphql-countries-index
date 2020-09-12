@@ -7,7 +7,6 @@ import { useClickOutside } from "hooks/useClickOutside";
 import React, { useRef } from "react";
 import type { FC } from "typings/FC";
 import type { Country } from "typings/generated";
-import { summarize } from "utils/summarize";
 import styles from "./DetailView.module.css";
 
 type Props = {
@@ -44,16 +43,14 @@ export const DetailView: FC<Props> = ({ countryCode, onClickOutside }) => {
   return (
     <div className={styles.detailView} ref={clickOutsideRef}>
       <Flag countryCode={countryCode} />
-      <Summary continentName={continent.name} countryName={name} />
+      <Summary continent={continent.name} country={name} />
       <div className={styles.miniResults}>
         <h4>Other countries in {continent.name}</h4>
         {firstThree.map(({ code, name, ...countryFacts }) => {
-          const summary = summarize(countryFacts);
-
           return (
             <ContentCard key={name} look="detail">
               <Flag countryCode={code} />
-              <Summary countryName={name} countrySummary={summary} />
+              <Summary country={name} facts={countryFacts} />
             </ContentCard>
           );
         })}

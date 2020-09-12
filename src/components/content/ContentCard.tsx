@@ -7,7 +7,7 @@ import styles from "./ContentCard.module.css";
 type Props = {
   children: ReactNode;
   look: "detail" | "overview";
-  onClick?: MouseEventHandler<HTMLDivElement>;
+  onClick?: () => void;
   onMouseOver?: () => void;
 };
 

@@ -1,6 +1,8 @@
 import React from "react";
+import type { CountryFacts } from "typings/CountryFacts";
 import type { FC } from "typings/FC";
 import type { Continent, Country } from "typings/generated";
+import { summarize } from "utils/summarize";
 import styles from "./Summary.module.css";
 
 /** This is one way to express an XOR relationship in TypeScript.
@@ -12,30 +14,32 @@ import styles from "./Summary.module.css";
  * And never both, and never neither. <3 */
 type Props =
   | {
-      countryName: Country["name"];
-      countrySummary: string;
-      continentName?: never;
+      country: Country["name"];
+      facts: CountryFacts;
+      continent?: never;
     }
   | {
-      countryName: Country["name"];
-      countrySummary?: never;
-      continentName: Continent["name"];
+      country: Country["name"];
+      facts?: never;
+      continent: Continent["name"];
     };
 
-export const Summary: FC<Props> = ({ continentName, countryName, countrySummary }) => {
-  if (continentName) {
+export const Summary: FC<Props> = ({ continent, country, facts }) => {
+  if (facts) {
+    const summary = summarize(facts);
+
     return (
-      <div className={styles.continent}>
-        <h2>{countryName}</h2>
-        <h3>{continentName}</h3>
+      <div className={styles.country}>
+        <h3>{country}</h3>
+        <p>{summary} </p>
       </div>
     );
   }
 
   return (
-    <div className={styles.country}>
-      <h3>{countryName}</h3>
-      <p>{countrySummary} </p>
+    <div className={styles.continent}>
+      <h2>{country}</h2>
+      <h3>{continent}</h3>
     </div>
   );
 };

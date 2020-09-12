@@ -1,9 +1,4 @@
-import type { Country, Continent, Language } from "typings/generated";
-
-type CountryFacts = Pick<Country, "capital" | "currency"> & {
-  continent: Pick<Continent, "name">;
-  languages: Pick<Language, "name">[];
-};
+import type { CountryFacts } from "typings/CountryFacts";
 
 export const summarize = ({ capital, continent, currency, languages }: CountryFacts) => {
   /** We use this abstraction to capture any bad values. */
