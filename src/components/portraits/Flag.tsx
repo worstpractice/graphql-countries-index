@@ -8,6 +8,8 @@ type Props = {
 };
 
 export const Flag: FC<Props> = ({ countryCode }) => {
+  console.log(countryCode);
+  
   return (
     <img
       alt={`Flag of ${countryCode}`}
