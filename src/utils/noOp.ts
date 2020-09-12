@@ -1,5 +1,5 @@
 /** Returning the same individual "do-nothing function" on every call to `noOp` ensures an allocation cost of N(1).  */
-const reusableDud = () => {}
+const reusableDud = () => {};
 
 /** Call `noOp` wherever you would otherwise declare a new anonymous do-nothing function (typically inline, as a default parameter).
  *
@@ -9,5 +9,5 @@ const reusableDud = () => {}
 export const noOp = <T>(..._: any[]) => {
   /** These type acrobatics preserve the proper contextual type inference when passing `noOp()`
    * as the default parameter in place of some other, "real" function. */
-  return (reusableDud as unknown) as NonNullable<T>
-}
+  return (reusableDud as unknown) as NonNullable<T>;
+};

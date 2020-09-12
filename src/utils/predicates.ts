@@ -3,9 +3,9 @@
  * See: https://fettblog.eu/typescript-type-predicates/ */
 
 export const isTypeError = (t: unknown): t is TypeError => {
-  return t instanceof TypeError
-}
+  return t instanceof TypeError;
+};
 
 export const isNull = (t: unknown): t is null => {
-  return Object.is(t, null)
-}
+  return Object.is(t, null);
+};

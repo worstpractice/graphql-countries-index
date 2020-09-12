@@ -1,5 +1,5 @@
-import { useEffect } from "react"
-import { isTypeError } from "utils/predicates"
+import { useEffect } from "react";
+import { isTypeError } from "utils/predicates";
 
 /** Warns the developer if accidentally passed a broken or unexpectedly relative URL.
  *
@@ -7,11 +7,11 @@ import { isTypeError } from "utils/predicates"
 export const useAbsoluteUrl = (href: string) => {
   useEffect(() => {
     try {
-      new URL(href)
+      new URL(href);
     } catch (e: unknown) {
       if (isTypeError(e)) {
-        console.warn(`Expected valid absolute URL, received "${href}".`)
+        console.warn(`Expected valid absolute URL, received "${href}".`);
       }
     }
-  }, [href])
-}
+  }, [href]);
+};

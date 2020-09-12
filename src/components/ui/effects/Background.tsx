@@ -1,13 +1,13 @@
-import { Grayout } from "components/ui/effects/Grayout"
-import type { ReactNode } from "react"
-import React from "react"
-import { createPortal } from "react-dom"
-import type { FC } from "typings/FC"
-import styles from "./Background.module.css"
+import { Grayout } from "components/ui/effects/Grayout";
+import type { ReactNode } from "react";
+import React from "react";
+import { createPortal } from "react-dom";
+import type { FC } from "typings/FC";
+import styles from "./Background.module.css";
 
 type Props = {
-  children: ReactNode
-}
+  children: ReactNode;
+};
 
 export const Background: FC<Props> = ({ children }) => {
   return createPortal(
@@ -16,6 +16,6 @@ export const Background: FC<Props> = ({ children }) => {
       <Grayout />
       <div>{children}</div>
     </>,
-    document.body
-  )
-}
+    document.body,
+  );
+};

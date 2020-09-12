@@ -1,12 +1,12 @@
-import type { ReactNode } from "react"
-import React from "react"
-import type { FC } from "typings/FC"
-import styles from "./FlexContainer.module.css"
+import type { ReactNode } from "react";
+import React from "react";
+import type { FC } from "typings/FC";
+import styles from "./FlexContainer.module.css";
 
 type Props = {
-  children: ReactNode
-}
+  children: ReactNode;
+};
 
 export const FlexContainer: FC<Props> = ({ children }) => {
-  return <div className={styles.flexContainer}>{children}</div>
-}
+  return <div className={styles.flexContainer}>{children}</div>;
+};

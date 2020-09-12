@@ -1,12 +1,6 @@
-import * as Apollo from "@apollo/client"
-import { gql } from "@apollo/client"
-import type {
-  CountriesQuery,
-  CountriesQueryVariables,
-  CountryQuery,
-  CountryQueryVariables,
-} from "typings/generated"
-
+import { gql } from "@apollo/client";
+import * as Apollo from "@apollo/client";
+import { CountriesQuery, CountriesQueryVariables, CountryQuery, CountryQueryVariables } from "typings/generated";
 export const CountryDetailsFragmentDoc = gql`
   fragment countryDetails on Country {
     capital
@@ -20,7 +14,7 @@ export const CountryDetailsFragmentDoc = gql`
     }
     name
   }
-`
+`;
 export const RelatedCountriesDetailsFragmentDoc = gql`
   fragment relatedCountriesDetails on Country {
     continent {
@@ -31,7 +25,7 @@ export const RelatedCountriesDetailsFragmentDoc = gql`
     }
   }
   ${CountryDetailsFragmentDoc}
-`
+`;
 export const CountriesDocument = gql`
   query Countries {
     countries {
@@ -39,7 +33,7 @@ export const CountriesDocument = gql`
     }
   }
   ${CountryDetailsFragmentDoc}
-`
+`;
 
 /**
  * __useCountriesQuery__
@@ -56,24 +50,19 @@ export const CountriesDocument = gql`
  *   },
  * });
  */
-export function useCountriesQuery(
-  baseOptions?: Apollo.QueryHookOptions<CountriesQuery, CountriesQueryVariables>
-) {
-  return Apollo.useQuery<CountriesQuery, CountriesQueryVariables>(CountriesDocument, baseOptions)
+export function useCountriesQuery(baseOptions?: Apollo.QueryHookOptions<CountriesQuery, CountriesQueryVariables>) {
+  return Apollo.useQuery<CountriesQuery, CountriesQueryVariables>(CountriesDocument, baseOptions);
 }
 export function useCountriesLazyQuery(
-  baseOptions?: Apollo.LazyQueryHookOptions<CountriesQuery, CountriesQueryVariables>
+  baseOptions?: Apollo.LazyQueryHookOptions<CountriesQuery, CountriesQueryVariables>,
 ) {
-  return Apollo.useLazyQuery<CountriesQuery, CountriesQueryVariables>(
-    CountriesDocument,
-    baseOptions
-  )
+  return Apollo.useLazyQuery<CountriesQuery, CountriesQueryVariables>(CountriesDocument, baseOptions);
 }
-export type CountriesQueryHookResult = ReturnType<typeof useCountriesQuery>
-export type CountriesLazyQueryHookResult = ReturnType<typeof useCountriesLazyQuery>
-export type CountriesQueryResult = Apollo.QueryResult<CountriesQuery, CountriesQueryVariables>
+export type CountriesQueryHookResult = ReturnType<typeof useCountriesQuery>;
+export type CountriesLazyQueryHookResult = ReturnType<typeof useCountriesLazyQuery>;
+export type CountriesQueryResult = Apollo.QueryResult<CountriesQuery, CountriesQueryVariables>;
 export function refetchCountriesQuery(variables?: CountriesQueryVariables) {
-  return { query: CountriesDocument, variables: variables }
+  return { query: CountriesDocument, variables: variables };
 }
 export const CountryDocument = gql`
   query Country($code: ID!) {
@@ -88,7 +77,7 @@ export const CountryDocument = gql`
     }
   }
   ${RelatedCountriesDetailsFragmentDoc}
-`
+`;
 
 /**
  * __useCountryQuery__
@@ -106,19 +95,15 @@ export const CountryDocument = gql`
  *   },
  * });
  */
-export function useCountryQuery(
-  baseOptions?: Apollo.QueryHookOptions<CountryQuery, CountryQueryVariables>
-) {
-  return Apollo.useQuery<CountryQuery, CountryQueryVariables>(CountryDocument, baseOptions)
+export function useCountryQuery(baseOptions?: Apollo.QueryHookOptions<CountryQuery, CountryQueryVariables>) {
+  return Apollo.useQuery<CountryQuery, CountryQueryVariables>(CountryDocument, baseOptions);
 }
-export function useCountryLazyQuery(
-  baseOptions?: Apollo.LazyQueryHookOptions<CountryQuery, CountryQueryVariables>
-) {
-  return Apollo.useLazyQuery<CountryQuery, CountryQueryVariables>(CountryDocument, baseOptions)
+export function useCountryLazyQuery(baseOptions?: Apollo.LazyQueryHookOptions<CountryQuery, CountryQueryVariables>) {
+  return Apollo.useLazyQuery<CountryQuery, CountryQueryVariables>(CountryDocument, baseOptions);
 }
-export type CountryQueryHookResult = ReturnType<typeof useCountryQuery>
-export type CountryLazyQueryHookResult = ReturnType<typeof useCountryLazyQuery>
-export type CountryQueryResult = Apollo.QueryResult<CountryQuery, CountryQueryVariables>
+export type CountryQueryHookResult = ReturnType<typeof useCountryQuery>;
+export type CountryLazyQueryHookResult = ReturnType<typeof useCountryLazyQuery>;
+export type CountryQueryResult = Apollo.QueryResult<CountryQuery, CountryQueryVariables>;
 export function refetchCountryQuery(variables?: CountryQueryVariables) {
-  return { query: CountryDocument, variables: variables }
+  return { query: CountryDocument, variables: variables };
 }

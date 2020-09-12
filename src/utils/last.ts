@@ -4,5 +4,5 @@
  *
  * Notice the return signature -- *gasps in wonder*. Dependent types. */
 export const last = <T extends ArrayLike<any>>(t: T): T[number] => {
-  return t[t.length - 1]
-}
+  return t[t.length - 1];
+};

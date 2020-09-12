@@ -1,11 +1,11 @@
-import React from "react"
-import type { FC } from "typings/FC"
-import styles from "./Hero.module.css"
+import React from "react";
+import type { FC } from "typings/FC";
+import styles from "./Hero.module.css";
 
 type Props = {
-  title: string
-  subtitle: string
-}
+  title: string;
+  subtitle: string;
+};
 
 export const Hero: FC<Props> = ({ title, subtitle }) => {
   return (
@@ -15,5 +15,5 @@ export const Hero: FC<Props> = ({ title, subtitle }) => {
         <h5 className={styles.subtitle}>{subtitle}</h5>
       </div>
     </section>
-  )
-}
+  );
+};

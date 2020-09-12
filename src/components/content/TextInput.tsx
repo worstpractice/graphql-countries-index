@@ -1,19 +1,19 @@
-import React, { ChangeEventHandler, useEffect, useRef } from "react"
-import type { FC } from "typings/FC"
-import styles from "./TextInput.module.css"
+import React, { ChangeEventHandler, useEffect, useRef } from "react";
+import type { FC } from "typings/FC";
+import styles from "./TextInput.module.css";
 
 type Props = {
-  onChange: ChangeEventHandler<HTMLInputElement>
-  placeholder: string
-  value: string
-}
+  onChange: ChangeEventHandler<HTMLInputElement>;
+  placeholder: string;
+  value: string;
+};
 
 export const TextInput: FC<Props> = ({ onChange, placeholder, value }) => {
-  const inputRef = useRef<HTMLInputElement>(null)
+  const inputRef = useRef<HTMLInputElement>(null);
 
   useEffect(function focusTextInputOnPageLoad() {
-    inputRef?.current?.focus()
-  }, [])
+    inputRef?.current?.focus();
+  }, []);
 
   return (
     <input
@@ -25,5 +25,5 @@ export const TextInput: FC<Props> = ({ onChange, placeholder, value }) => {
       type="text"
       value={value}
     />
-  )
-}
+  );
+};
