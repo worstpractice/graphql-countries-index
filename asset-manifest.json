@@ -1,19 +1,21 @@
 {
   "files": {
     "main.css": "/graphql-countries-index/static/css/main.d624f5fd.chunk.css",
-    "main.js": "/graphql-countries-index/static/js/main.96d52caa.chunk.js",
-    "main.js.map": "/graphql-countries-index/static/js/main.96d52caa.chunk.js.map",
+    "main.js": "/graphql-countries-index/static/js/main.2830b9f4.chunk.js",
+    "main.js.map": "/graphql-countries-index/static/js/main.2830b9f4.chunk.js.map",
     "runtime-main.js": "/graphql-countries-index/static/js/runtime-main.29904532.js",
     "runtime-main.js.map": "/graphql-countries-index/static/js/runtime-main.29904532.js.map",
     "static/css/2.bb59309b.chunk.css": "/graphql-countries-index/static/css/2.bb59309b.chunk.css",
-    "static/js/2.0dc31006.chunk.js": "/graphql-countries-index/static/js/2.0dc31006.chunk.js",
-    "static/js/2.0dc31006.chunk.js.map": "/graphql-countries-index/static/js/2.0dc31006.chunk.js.map",
+    "static/js/2.a23fe439.chunk.js": "/graphql-countries-index/static/js/2.a23fe439.chunk.js",
+    "static/js/2.a23fe439.chunk.js.map": "/graphql-countries-index/static/js/2.a23fe439.chunk.js.map",
     "index.html": "/graphql-countries-index/index.html",
-    "precache-manifest.763e8da551ed4b29a46d5caab3f8f1b1.js": "/graphql-countries-index/precache-manifest.763e8da551ed4b29a46d5caab3f8f1b1.js",
+    "precache-manifest.9962798d376260d17cb2a32e9c9b0f0e.js": "/graphql-countries-index/precache-manifest.9962798d376260d17cb2a32e9c9b0f0e.js",
     "service-worker.js": "/graphql-countries-index/service-worker.js",
     "static/css/2.bb59309b.chunk.css.map": "/graphql-countries-index/static/css/2.bb59309b.chunk.css.map",
     "static/css/main.d624f5fd.chunk.css.map": "/graphql-countries-index/static/css/main.d624f5fd.chunk.css.map",
-    "static/js/2.0dc31006.chunk.js.LICENSE.txt": "/graphql-countries-index/static/js/2.0dc31006.chunk.js.LICENSE.txt",
+    "static/js/2.a23fe439.chunk.js.LICENSE.txt": "/graphql-countries-index/static/js/2.a23fe439.chunk.js.LICENSE.txt",
+    "static/media/AQ.png": "/graphql-countries-index/static/media/AQ.b5b8189c.png",
+    "static/media/BL.png": "/graphql-countries-index/static/media/BL.d7a63f32.png",
     "static/media/reset.module.css": "/graphql-countries-index/static/media/Inter.0930073e.ttf",
     "static/media/Hero.module.css": "/graphql-countries-index/static/media/anivia.8dbef9e7.jpg",
     "static/media/Background.module.css": "/graphql-countries-index/static/media/ashe.a5990055.jpg",
@@ -23,8 +25,8 @@
   "entrypoints": [
     "static/js/runtime-main.29904532.js",
     "static/css/2.bb59309b.chunk.css",
-    "static/js/2.0dc31006.chunk.js",
+    "static/js/2.a23fe439.chunk.js",
     "static/css/main.d624f5fd.chunk.css",
-    "static/js/main.96d52caa.chunk.js"
+    "static/js/main.2830b9f4.chunk.js"
   ]
 }
