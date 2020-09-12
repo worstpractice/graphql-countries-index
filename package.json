@@ -40,7 +40,7 @@
   "name": "graphql-countries-index",
   "private": true,
   "scripts": {
-    "build": "yarn devtools:off && react-scripts build",
+    "build": "yarn devtools:off && react-scripts build && yarn devtools:on",
     "codegen": "graphql-codegen && prettier --loglevel silent -u -w ./src/**/*.{ts,tsx,d.ts}",
     "deploy": "gh-pages -d build",
     "devtools:off": "node ./devtools-off.js",
