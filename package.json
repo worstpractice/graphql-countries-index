@@ -24,6 +24,7 @@
     "prettier": "^2.1.1",
     "react-devtools": "^4.8.2",
     "react-scripts": "3.4.3",
+    "replace-in-file": "^6.1.0",
     "stylelint": "^13.7.0",
     "stylelint-config-standard": "^20.0.0",
     "stylelint-css-modules": "^1.2.0-globals",
@@ -39,11 +40,13 @@
   "name": "graphql-countries-index",
   "private": true,
   "scripts": {
-    "build": "react-scripts build",
+    "build": "yarn devtools:off && react-scripts build",
     "codegen": "graphql-codegen && prettier --loglevel silent -u -w ./src/**/*.{ts,tsx,d.ts}",
     "deploy": "gh-pages -d build",
+    "devtools:off": "node ./devtools-off.js",
+    "devtools:on": "node ./devtools-on.js",
     "predeploy": "yarn build",
-    "start": "react-scripts start"
+    "start": "yarn devtools:on && react-scripts start"
   },
   "version": "0.1.0"
 }
