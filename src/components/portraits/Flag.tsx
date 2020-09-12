@@ -9,12 +9,12 @@ type Props = {
 
 export const Flag: FC<Props> = ({ countryCode }) => {
   console.log(countryCode);
-  
+
   return (
     <img
       alt={`Flag of ${countryCode}`}
       className={styles.flag}
-      src={`${process.env.PUBLIC_URL}/images/flags/${countryCode}.png`}
+      src={`${process.env.PUBLIC_URL}/flags/${countryCode}.png`}
     />
   );
 };
