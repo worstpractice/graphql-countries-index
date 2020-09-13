@@ -3,7 +3,7 @@ import { Summary } from "components/content/Summary";
 import { Tally } from "components/content/Tally";
 import { Flag } from "components/portraits/Flag";
 import { useGetCountryQuery } from "hooks/generated";
-import { useClickOutside } from "hooks/useClickOutside";
+import { useInteractOutside } from "hooks/useInteractOutside";
 import React, { useRef } from "react";
 import type { State } from "store";
 import { useStore } from "store";
@@ -21,8 +21,8 @@ const selector = ({ closeModal, selectedCountry }: State) => ({
 export const DetailView: FC<Props> = () => {
   const { closeModal, selectedCountry } = useStore(selector);
   const { client, data, error, loading } = useGetCountryQuery({ variables: { code: selectedCountry } });
-  const clickOutsideRef = useRef<HTMLDivElement>(null);
-  useClickOutside(clickOutsideRef, closeModal);
+  const interactOutsideRef = useRef<HTMLDivElement>(null);
+  useInteractOutside(interactOutsideRef, closeModal);
 
   /** In a real project, this would be good place to present a loading indicator, do graceful error handling, etc. */
   if (loading || error || !data) {
@@ -50,7 +50,7 @@ export const DetailView: FC<Props> = () => {
   const randomTrio = blindPick(relatedCountries, 3);
 
   return (
-    <div className={styles.detailView} ref={clickOutsideRef}>
+    <div className={styles.detailView} ref={interactOutsideRef}>
       <Flag code={selectedCountry} country={ownName} />
       <Summary continent={continent.name} country={ownName} />
       <div className={styles.miniResults}>

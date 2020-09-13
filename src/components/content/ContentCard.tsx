@@ -5,12 +5,11 @@ import styles from "./ContentCard.module.css";
 
 type Props = {
   children: ReactNode;
-  onClick?: () => void;
-  onTouchStart?: () => void;
+  onInteraction?: () => void;
   onMouseOver?: () => void;
 };
 
-export const ContentCard: FC<Props> = ({ children, onClick, onMouseOver, onTouchStart }) => {
+export const ContentCard: FC<Props> = ({ children, onInteraction, onMouseOver }) => {
   const [isPrefetched, setIsPrefetched] = useState(false);
 
   const handleMouseOver: MouseEventHandler<HTMLDivElement> = () => {
@@ -23,7 +22,7 @@ export const ContentCard: FC<Props> = ({ children, onClick, onMouseOver, onTouch
   };
 
   return (
-    <article onClick={onClick} onMouseOver={handleMouseOver} onTouchStart={onTouchStart} className={styles.card}>
+    <article onClick={onInteraction} onMouseOver={handleMouseOver} onTouchStart={onInteraction} className={styles.card}>
       {children}
     </article>
   );

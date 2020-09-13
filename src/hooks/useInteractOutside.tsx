@@ -3,7 +3,8 @@ import { useCallback, useEffect } from "react";
 import { addEventListener } from "utils/addEventListener";
 import { compose } from "utils/compose";
 
-export const useClickOutside = (elementRef: RefObject<HTMLDivElement>, handler: EventListener) => {
+/** For when users interact (read: click and/or touch) outside a modal, and you want that "outside interaction" to close the modal. */
+export const useInteractOutside = (elementRef: RefObject<HTMLDivElement>, handler: EventListener) => {
   const memoizedHandler = useCallback(handler, [elementRef]);
 
   useEffect(

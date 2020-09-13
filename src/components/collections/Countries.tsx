@@ -35,7 +35,7 @@ export const Countries: FC<Props> = ({ client, countries }) => {
         };
 
         return (
-          <ContentCard onClick={handleCardInteraction} onMouseOver={prefetchCountryData} onTouchStart={handleCardInteraction} key={code}>
+          <ContentCard onInteraction={handleCardInteraction} onMouseOver={prefetchCountryData} key={code}>
             <Flag code={code} country={name} />
             <Summary country={name} facts={countryFacts} />
           </ContentCard>
