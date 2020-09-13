@@ -41,9 +41,11 @@
   "private": true,
   "scripts": {
     "build": "react-scripts build",
-    "codegen": "graphql-codegen && prettier --loglevel silent -u -w ./src/**/*.{ts,tsx,d.ts}",
+    "codegen": "graphql-codegen && yarn fmt",
     "deploy": "gh-pages -d build",
+    "fmt": "prettier --loglevel silent -u -w ./src/**/*.{ts,tsx,d.ts}",
     "predeploy": "yarn build",
+    "push": "git push && yarn deploy",
     "start": "react-scripts start"
   },
   "version": "0.1.0"
