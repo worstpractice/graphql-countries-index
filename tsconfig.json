@@ -45,13 +45,11 @@
     ]
   },
   "exclude": [
-    "./node_modules/ts-invariant/**/*.*"
+    "build",
+    "node_modules"
   ],
   "include": [
-    "!./node_modules/ts-invariant/**/*",
-    "!**/node_modules/**/*",
-    "!./build",
-    "./src"
+    "src"
   ],
   "typeAcquisition": {
     "enable": true
