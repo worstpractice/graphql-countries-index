@@ -9,6 +9,12 @@
   text-rendering: optimizeLegibility;
 }
 
+@media only screen and (max-width: 800px) {
+  body {
+    overflow: scroll scroll;
+  }
+}
+
 @import "./colors.module.css";
 @import "./fonts.module.css";
 @import "./scrollbars.module.css";
