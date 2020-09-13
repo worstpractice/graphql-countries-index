@@ -16,6 +16,7 @@
 
 .card:hover {
   background: var(--color-hover-card);
+  cursor: pointer;
 }
 
 @media only screen and (max-width: 600px) {
