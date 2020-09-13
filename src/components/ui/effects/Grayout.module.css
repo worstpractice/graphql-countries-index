@@ -4,7 +4,7 @@
   left: 0;
   position: fixed;
   right: 0;
-  top: calc(60vh);
+  top: calc(60%);
   z-index: var(--altitude-above);
 }
 
@@ -15,22 +15,12 @@
       var(--color-background-gradient-top),
       var(--color-background-gradient-bottom)
     );
-  bottom: calc(40vh);
+  bottom: calc(40%);
   left: 0;
   position: fixed;
   right: 0;
   top: 0;
   z-index: var(--altitude-above);
-}
-
-@media only screen and (max-width: 500px) {
-  .bottom {
-    top: calc(40vh);
-  }
-
-  .top {
-    bottom: calc(60vh);
-  }
 }
 
 @import "../../../styles/altitudes.module.css";
