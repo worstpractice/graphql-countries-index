@@ -25,7 +25,7 @@
 
 @media only screen and (max-width: 500px) {
   .bottom {
-    top: calc(60vh);
+    top: calc(40vh);
   }
 
   .top {
