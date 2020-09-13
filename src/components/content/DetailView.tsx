@@ -56,7 +56,7 @@ export const DetailView: FC<Props> = () => {
       <Summary continent={continent.name} country={ownName} />
       <div className={styles.miniResults}>
         <h4>Other countries in {continent.name}</h4>
-        <Countries client={client} countries={randomTrio} isDetail />
+        <Countries client={client} countries={randomTrio} />
       </div>
       <Tally relatedCountries={relatedCountries.length} />
     </div>
