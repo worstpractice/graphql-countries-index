@@ -12,20 +12,24 @@ import type { ListOfCountries } from "typings/ListOfCountries";
 type Props = {
   client: ApolloClient<NormalizedCacheObject>;
   countries: ListOfCountries;
+  isDetail?: true;
 };
 
-const selector = ({ openModal, setSelectedCountry }: State) => ({
+const selector = ({ isModalOpen, openModal, setSelectedCountry }: State) => ({
+  isModalOpen,
   openModal,
   setSelectedCountry,
 });
 
-export const Countries: FC<Props> = ({ client, countries }) => {
-  const { openModal, setSelectedCountry } = useStore(selector);
+export const Countries: FC<Props> = ({ client, countries, isDetail }) => {
+  const { isModalOpen, openModal, setSelectedCountry } = useStore(selector);
 
   return (
     <>
       {countries.map(({ code, name, ...countryFacts }) => {
         const handleCardClick = () => {
+          if (isModalOpen && !isDetail) return;
+
           setSelectedCountry(code);
           openModal();
         };
