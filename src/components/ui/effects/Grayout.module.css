@@ -1,10 +1,11 @@
 .bottom {
   background-color: var(--color-background-gradient-bottom);
   bottom: 0;
+  height: calc(50vh);
   left: 0;
   position: fixed;
   right: 0;
-  top: calc(60%);
+  top: calc(50%);
   z-index: var(--altitude-above);
 }
 
@@ -15,7 +16,8 @@
       var(--color-background-gradient-top),
       var(--color-background-gradient-bottom)
     );
-  bottom: calc(40%);
+  bottom: calc(50%);
+  height: calc(50vh);
   left: 0;
   position: fixed;
   right: 0;
