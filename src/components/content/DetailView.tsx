@@ -44,8 +44,6 @@ export const DetailView: FC<Props> = ({ countryCode, onClick, onClickOutside }) 
     return name !== ownName;
   });
 
-  type x = typeof relatedCountries;
-
   const randomTrio = blindPick(relatedCountries, 3);
 
   return (
