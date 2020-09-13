@@ -1,14 +1,12 @@
 import type { ListOfFacts } from "typings/ListOfFacts";
 
 export const summarize = ({ capital, continent, currency, languages }: ListOfFacts) => {
-  const safetyNet: string[] = [];
-
-  safetyNet.push(
+  const safetyNet = [
     capital ?? "",
     continent?.name ?? "",
     currency ? currency.split(",")[0] : "",
     languages?.[0]?.name ?? "",
-  );
+  ] as const;
 
   const facts = safetyNet.filter(Boolean);
 
