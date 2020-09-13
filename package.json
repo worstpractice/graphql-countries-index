@@ -25,7 +25,7 @@
     "prettier": "^2.1.1",
     "react-devtools": "^4.8.2",
     "react-scripts": "3.4.3",
-    "stylelint": "^13.7.0",
+    "stylelint": "^13.7.1",
     "stylelint-config-standard": "^20.0.0",
     "stylelint-css-modules": "^1.2.0-globals",
     "stylelint-declaration-block-no-ignored-properties": "^2.3.0",
