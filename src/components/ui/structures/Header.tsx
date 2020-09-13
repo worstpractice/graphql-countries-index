@@ -14,7 +14,6 @@ export const Header: FC<Props> = ({ children }) => {
   useEffect(
     function restoreMobileViewport() {
       if (!isInView) {
-        console.log('Scrolled to top!');
         window.scrollTo(0, 0);
       }
     },
