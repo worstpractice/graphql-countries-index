@@ -1,7 +1,7 @@
 import React from "react";
-import type { CountryFacts } from "typings/CountryFacts";
 import type { FC } from "typings/FC";
 import type { Continent, Country } from "typings/generated";
+import type { ListOfFacts } from "typings/ListOfFacts";
 import { summarize } from "utils/summarize";
 import styles from "./Summary.module.css";
 
@@ -15,7 +15,7 @@ import styles from "./Summary.module.css";
 type Props =
   | {
       country: Country["name"];
-      facts: CountryFacts;
+      facts: ListOfFacts;
       continent?: never;
     }
   | {

@@ -1,4 +1,4 @@
-import type { CountryFacts } from "typings/CountryFacts";
+import type { CountryFacts } from "typings/ListOfFacts";
 
 export const summarize = ({ capital, continent, currency, languages }: CountryFacts) => {
   const safetyNet: string[] = [];

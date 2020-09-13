@@ -5,14 +5,11 @@ import { Summary } from "components/content/Summary";
 import { Flag } from "components/portraits/Flag";
 import React from "react";
 import type { FC } from "typings/FC";
-import type { Continent, Country, Language } from "typings/generated";
+import type { ListOfCountries } from "typings/ListOfCountries";
 
 type Props = {
   client: ApolloClient<any>;
-  countries: (Pick<Country, "capital" | "currency" | "name" | "code"> & {
-    continent: Pick<Continent, "name">;
-    languages: Pick<Language, "name">[];
-  })[];
+  countries: ListOfCountries;
   onClick: (countryName: string) => void;
 };
 
