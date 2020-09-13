@@ -18,6 +18,8 @@ export const useClickOutside = (elementRef: RefObject<HTMLDivElement>, handler: 
           return;
         }
 
+        event.stopImmediatePropagation();
+        event.preventDefault();
         memoizedHandler(event);
       };
 
