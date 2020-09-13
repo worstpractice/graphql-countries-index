@@ -1,6 +1,6 @@
-import type { CountryFacts } from "typings/ListOfFacts";
+import type { ListOfFacts } from "typings/ListOfFacts";
 
-export const summarize = ({ capital, continent, currency, languages }: CountryFacts) => {
+export const summarize = ({ capital, continent, currency, languages }: ListOfFacts) => {
   const safetyNet: string[] = [];
 
   safetyNet.push(
