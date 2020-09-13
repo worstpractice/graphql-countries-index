@@ -10,23 +10,22 @@ export const useStore = create<State>(
       selectedCountry: "",
     },
 
-    (set) =>
-      ({
-        closeModal() {
-          set(() => ({ isModalOpen: false }));
-        },
-        openModal() {
-          set(() => ({ isModalOpen: true }));
-        },
-        setSearchTerm(to: string) {
-          set(() => ({ searchTerm: to }));
-        },
-        setSelectedCountry(to: string) {
-          set(() => ({ selectedCountry: to }));
-        },
-        toggleModal() {
-          set((state) => ({ isModalOpen: !state.isModalOpen }));
-        },
-      } as const),
+    (set) => ({
+      closeModal() {
+        set(() => ({ isModalOpen: false }));
+      },
+      openModal() {
+        set(() => ({ isModalOpen: true }));
+      },
+      setSearchTerm(to: string) {
+        set(() => ({ searchTerm: to }));
+      },
+      setSelectedCountry(to: string) {
+        set(() => ({ selectedCountry: to }));
+      },
+      toggleModal() {
+        set((state) => ({ isModalOpen: !state.isModalOpen }));
+      },
+    }),
   ),
 );
