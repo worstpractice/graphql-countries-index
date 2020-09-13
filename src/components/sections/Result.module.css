@@ -4,6 +4,7 @@
   border-radius: 5px;
   column-gap: 15px;
   display: flex;
+  flex-shrink: 0;
   flex-wrap: wrap;
   height: 100%;
   overflow: hidden auto;

@@ -10,7 +10,7 @@
 .hero {
   background-attachment: fixed;
   background-color: var(--color-background);
-  background-image: url(../../assets/images/anivia.jpg);
+  background-image: url("../../assets/images/anivia.jpg");
   background-position: bottom;
   background-repeat: no-repeat;
   background-size: cover;

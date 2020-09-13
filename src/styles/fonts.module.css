@@ -51,7 +51,7 @@ h5 {
 
 @font-face {
   font-family: "Inter";
-  src: local("Inter"), url(../assets/fonts/Inter.ttf) format("truetype");
+  src: local("Inter"), url("../assets/fonts/Inter.ttf") format("truetype");
 }
 
 p {
