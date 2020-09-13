@@ -20,6 +20,7 @@ export const useInteractOutside = (elementRef: RefObject<HTMLDivElement>, handle
         }
 
         event.stopImmediatePropagation();
+        event.preventDefault();
         memoizedHandler(event);
       };
 
