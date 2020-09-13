@@ -40,8 +40,8 @@
     "suppressImplicitAnyIndexErrors": false,
     "target": "ESNext",
     "typeRoots": [
-      "./src/typings/**/*.d.ts",
-      "./node_modules/@types/**/*.d.ts"
+      "./src/typings/**",
+      "./node_modules/@types/**"
     ]
   },
   "exclude": [
