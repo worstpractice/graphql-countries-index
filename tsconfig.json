@@ -42,9 +42,12 @@
     "target": "ESNext"
   },
   "exclude": [
-    "node_modules"
+    "build", "node_modules"
   ],
   "typeAcquisition": {
     "enable": true
-  }
+  },
+  "include": [
+    "src"
+  ]
 }
