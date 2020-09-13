@@ -6,7 +6,7 @@ type Props = {};
 
 export const Hero: FC<Props> = () => {
   return (
-    <section className={styles.hero}>
+    <section className={styles.hero} onTouchStart={() => window.alert("Touch!")}>
       <div className={styles.fade}>
         <h1 className={styles.title}>Lorem Ipsum</h1>
         <h5 className={styles.subtitle}>Sit Dolor</h5>
