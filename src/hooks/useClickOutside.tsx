@@ -9,8 +9,6 @@ export const useClickOutside = (elementRef: RefObject<HTMLDivElement>, handler: 
   useEffect(
     function addEventListeners() {
       const listener: EventListener = (event: Event) => {
-        event.stopPropagation();
-
         if (!elementRef.current) {
           return;
         }

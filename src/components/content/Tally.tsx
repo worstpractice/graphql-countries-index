@@ -23,7 +23,13 @@ type Props =
 
 export const Tally: FC<Props> = ({ countries, matches, relatedCountries }) => {
   if (relatedCountries) {
-    return <h3 className={styles.related}>{relatedCountries}+ more</h3>;
+    let others = relatedCountries - 4;
+
+    if (others < 0) {
+      others = 0;
+    }
+
+    return <h3 className={styles.related}>{others}+ more</h3>;
   }
 
   return (
