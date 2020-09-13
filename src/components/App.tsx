@@ -18,12 +18,12 @@ import type { FC } from "typings/FC";
 
 type Props = {};
 
-const selector = ({ isModalOpen }: State) => {
-  return [isModalOpen] as const;
-};
+const selector = ({ isModalOpen }: State) => ({
+  isModalOpen,
+});
 
 export const App: FC<Props> = () => {
-  const [isModalOpen] = useStore(selector);
+  const { isModalOpen } = useStore(selector);
 
   return (
     <Background>

@@ -9,12 +9,12 @@ import styles from "./Result.module.css";
 
 type Props = {};
 
-const selector = ({ searchTerm }: State) => {
-  return [searchTerm] as const;
-};
+const selector = ({ searchTerm }: State) => ({
+  searchTerm,
+});
 
 export const Result: FC<Props> = () => {
-  const [searchTerm] = useStore(selector);
+  const { searchTerm } = useStore(selector);
   const { client, data, error, loading } = useGetCountriesQuery();
 
   // Short-circuit in order of fastest-to-check.

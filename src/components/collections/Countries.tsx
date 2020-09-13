@@ -14,12 +14,13 @@ type Props = {
   countries: ListOfCountries;
 };
 
-const selector = ({ openModal, setSelectedCountry }: State) => {
-  return [openModal, setSelectedCountry] as const;
-};
+const selector = ({ openModal, setSelectedCountry }: State) => ({
+  openModal,
+  setSelectedCountry,
+});
 
 export const Countries: FC<Props> = ({ client, countries }) => {
-  const [openModal, setSelectedCountry] = useStore(selector);
+  const { openModal, setSelectedCountry } = useStore(selector);
 
   return (
     <>

@@ -6,12 +6,13 @@ import styles from "./TextInput.module.css";
 
 type Props = {};
 
-const selector = ({ setSearchTerm, searchTerm }: State) => {
-  return [setSearchTerm, searchTerm] as const;
-};
+const selector = ({ setSearchTerm, searchTerm }: State) => ({
+  setSearchTerm,
+  searchTerm,
+});
 
 export const TextInput: FC<Props> = () => {
-  const [setSearchTerm, searchTerm] = useStore(selector);
+  const { setSearchTerm, searchTerm } = useStore(selector);
   const inputRef = useRef<HTMLInputElement>(null);
 
   useEffect(function focusTextInputOnPageLoad() {

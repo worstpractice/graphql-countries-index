@@ -13,12 +13,13 @@ import styles from "./DetailView.module.css";
 
 type Props = {};
 
-const selector = ({ closeModal, selectedCountry }: State) => {
-  return [closeModal, selectedCountry] as const;
-};
+const selector = ({ closeModal, selectedCountry }: State) => ({
+  closeModal,
+  selectedCountry,
+});
 
 export const DetailView: FC<Props> = () => {
-  const [closeModal, selectedCountry] = useStore(selector);
+  const { closeModal, selectedCountry } = useStore(selector);
 
   const clickOutsideRef = useRef<HTMLDivElement>(null);
   useClickOutside(clickOutsideRef, closeModal);
