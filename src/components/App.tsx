@@ -49,7 +49,7 @@ export const App: FC<Props> = () => {
         <Pillar size="small" />
         <Main>
           <FlexContainer>
-            <Hero subtitle="Sit Dolor" title={"Lorem Ipsum"} />
+            <Hero subtitle="Sit Dolor" title="Lorem Ipsum" />
             <Search>
               <TextInput onChange={handleSearchInput} placeholder="Search for a country" value={searchTerm} />
             </Search>
