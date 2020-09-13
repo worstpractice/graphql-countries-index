@@ -5,7 +5,6 @@
   position: fixed;
   right: 0;
   top: calc(60vh);
-  width: 100%;
   z-index: var(--altitude-above);
 }
 
@@ -21,16 +20,8 @@
   position: fixed;
   right: 0;
   top: 0;
-  width: 100%;
   z-index: var(--altitude-above);
 }
-/*
-@media only screen and (max-width: 500px) {
-  .bottom {
-
-  }
-  .top {}
-} */
 
 @import "../../../styles/altitudes.module.css";
 @import "../../../styles/colors.module.css";
