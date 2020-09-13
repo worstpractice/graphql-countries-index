@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "83818f46edbb04ed5fcc68410a03fee2",
+    "revision": "0a8e23acf3123462d198dfec0df0367b",
     "url": "/graphql-countries-index/index.html"
   },
   {
