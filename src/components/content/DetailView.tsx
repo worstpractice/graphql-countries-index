@@ -7,7 +7,7 @@ import { useClickOutside } from "hooks/useClickOutside";
 import { useStore } from "hooks/useStore";
 import React, { useRef } from "react";
 import type { FC } from "typings/FC";
-import { blindPick } from "utils/atRandom";
+import { blindPick } from "utils/blindPick";
 import styles from "./DetailView.module.css";
 
 type Props = {};
