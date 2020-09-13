@@ -1,5 +1,4 @@
-import { GetCountry } from "api/queries";
-import { ContentCard } from "components/content/ContentCard";
+import { Countries } from "components/collections/Countries";
 import { Summary } from "components/content/Summary";
 import { Tally } from "components/content/Tally";
 import { Flag } from "components/portraits/Flag";
@@ -45,6 +44,8 @@ export const DetailView: FC<Props> = ({ countryCode, onClick, onClickOutside }) 
     return name !== ownName;
   });
 
+  type x = typeof relatedCountries;
+
   const randomTrio = blindPick(relatedCountries, 3);
 
   return (
@@ -53,22 +54,7 @@ export const DetailView: FC<Props> = ({ countryCode, onClick, onClickOutside }) 
       <Summary continent={continent.name} country={ownName} />
       <div className={styles.miniResults}>
         <h4>Other countries in {continent.name}</h4>
-        {randomTrio.map(({ code, name, ...countryFacts }) => {
-          const handleClick = () => {
-            onClick(code);
-          };
-
-          const prefetchCountryData = () => {
-            client.query({ query: GetCountry, variables: { code } });
-          };
-
-          return (
-            <ContentCard key={name} onClick={handleClick} onMouseOver={prefetchCountryData}>
-              <Flag countryCode={code} />
-              <Summary country={name} facts={countryFacts} />
-            </ContentCard>
-          );
-        })}
+        <Countries client={client} countries={randomTrio} onClick={onClick} />
       </div>
       <Tally relatedCountries={relatedCountries.length} />
     </div>

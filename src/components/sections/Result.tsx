@@ -1,8 +1,5 @@
-import { GetCountry } from "api/queries";
-import { ContentCard } from "components/content/ContentCard";
-import { Summary } from "components/content/Summary";
+import { Countries } from "components/collections/Countries";
 import { Tally } from "components/content/Tally";
-import { Flag } from "components/portraits/Flag";
 import { useGetCountriesQuery } from "hooks/generated";
 import React from "react";
 import type { FC } from "typings/FC";
@@ -35,22 +32,7 @@ export const Result: FC<Props> = ({ onClick, searchString }) => {
     <>
       <Tally countries={countries.length} matches={matches.length} />
       <section className={styles.result}>
-        {sortedMatches.map(({ code, name, ...countryFacts }) => {
-          const handleClick = () => {
-            onClick(code);
-          };
-
-          const prefetchCountryData = () => {
-            client.query({ query: GetCountry, variables: { code } });
-          };
-
-          return (
-            <ContentCard onClick={handleClick} onMouseOver={prefetchCountryData} key={code}>
-              <Flag countryCode={code} />
-              <Summary country={name} facts={countryFacts} />
-            </ContentCard>
-          );
-        })}
+        <Countries client={client} countries={sortedMatches} onClick={onClick} />
       </section>
     </>
   );
