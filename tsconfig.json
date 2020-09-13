@@ -30,7 +30,6 @@
     "noUnusedParameters": false,
     "pretty": true,
     "resolveJsonModule": true,
-    "skipDefaultLibCheck": true,
     "skipLibCheck": false,
     "strict": true,
     "strictBindCallApply": true,
@@ -39,15 +38,17 @@
     "strictPropertyInitialization": true,
     "suppressExcessPropertyErrors": false,
     "suppressImplicitAnyIndexErrors": false,
-    "target": "ESNext"
+    "target": "ESNext",
+    "typeRoots": [
+      "./src/typings/**/*.d.ts",
+      "./node_modules/@types/**/*.d.ts"
+    ]
   },
   "exclude": [
-    "build", "node_modules"
+    "build",
+    "node_modules"
   ],
   "typeAcquisition": {
     "enable": true
-  },
-  "include": [
-    "src"
-  ]
+  }
 }
