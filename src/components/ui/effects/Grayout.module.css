@@ -23,5 +23,15 @@
   z-index: var(--altitude-above);
 }
 
+@media only screen and (max-width: 500px) {
+  .bottom {
+    top: calc(60vh);
+  }
+
+  .top {
+    bottom: calc(60vh);
+  }
+}
+
 @import "../../../styles/altitudes.module.css";
 @import "../../../styles/colors.module.css";
