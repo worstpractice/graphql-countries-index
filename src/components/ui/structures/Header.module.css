@@ -6,7 +6,6 @@
   grid-area: header;
   height: 75px;
   padding-left: 17.5vw;
-  position: sticky;
   z-index: var(--altitude-abover);
 }
 
