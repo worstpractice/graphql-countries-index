@@ -4,8 +4,7 @@
   border-radius: 5px;
   column-gap: 15px;
   display: flex;
-  flex: 6;
-  flex-shrink: 0;
+  flex: 8;
   flex-wrap: wrap;
   height: 100%;
   overflow: hidden auto;
