@@ -2,8 +2,8 @@
   --font-weight-thin: 400;
   --font-weight-medium: 500;
   --font-weight-bold: 600;
-  --font-padding-bottom: 3px;
-  --font-padding-top: 3px;
+  --font-padding-bottom: 6px;
+  --font-padding-top: 6px;
 }
 
 h1 {
@@ -37,7 +37,6 @@ h4 {
   color: var(--color-font-headline);
   font-size: 0.8rem;
   font-weight: var(--font-weight-bold);
-  margin: 0;
   padding-bottom: var(--font-padding-bottom);
   padding-top: var(--font-padding-top);
 }
@@ -46,7 +45,6 @@ h5 {
   color: var(--color-font-headline);
   font-size: 1rem;
   font-weight: var(--font-weight-thin);
-  margin: 0;
   padding-bottom: var(--font-padding-bottom);
   padding-top: var(--font-padding-top);
 }
@@ -61,9 +59,34 @@ p {
   filter: brightness(0.75);
   font-size: 0.7rem;
   font-weight: var(--font-weight-medium);
-  margin: 0;
   padding-bottom: var(--font-padding-bottom);
   padding-top: var(--font-padding-top);
+}
+
+@media only screen and (max-width: 800px) {
+  h1 {
+    font-size: 2rem;
+  }
+
+  h2 {
+    font-size: 0.5rem;
+  }
+
+  h3 {
+    font-size: 0.5rem;
+  }
+
+  h4 {
+    font-size: 0.5rem;
+  }
+
+  h5 {
+    font-size: 0.5rem;
+  }
+
+  p {
+    font-size: 0.5rem;
+  }
 }
 
 @import "./colors.module.css";

@@ -14,8 +14,12 @@
   padding-top: 20px;
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 800px) {
   .continent {
-    gap: 5px;
+    gap: 0;
+  }
+
+  .country {
+    gap: 0;
   }
 }
