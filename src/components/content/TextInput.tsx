@@ -1,4 +1,4 @@
-import React, { ChangeEventHandler, useEffect, useRef } from "react";
+import React, { ChangeEventHandler, useRef } from "react";
 import type { State } from "store";
 import { useStore } from "store";
 import type { FC } from "typings/FC";
@@ -15,10 +15,6 @@ const selector = ({ setSearchTerm, searchTerm }: State) => ({
 export const TextInput: FC<Props> = () => {
   const { setSearchTerm, searchTerm } = useStore(selector);
   const inputRef = useRef<HTMLInputElement>(null);
-
-  useEffect(function focusTextInputOnPageLoad() {
-    inputRef?.current?.focus();
-  }, []);
 
   const handleSearchInput: ChangeEventHandler<HTMLInputElement> = ({ target }) => {
     adjustMobileViewport();
