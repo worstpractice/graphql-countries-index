@@ -14,7 +14,7 @@ import type { ReactElement, ValidationMap, WeakValidationMap } from "react";
  *
  * @example
  * import type { ReactNode } from "react";
- * import type { FC } from "typings";
+ * import type { FC } from "typings/FC";
  *
  * type Props = {
  *   children: ReactNode; // NOTE: Not optional unless you make it

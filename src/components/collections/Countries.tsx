@@ -1,4 +1,4 @@
-import type { ApolloClient } from "@apollo/client";
+import type { ApolloClient, NormalizedCacheObject } from "@apollo/client";
 import { GetCountry } from "api/queries";
 import { ContentCard } from "components/content/ContentCard";
 import { Summary } from "components/content/Summary";
@@ -10,7 +10,7 @@ import type { FC } from "typings/FC";
 import type { ListOfCountries } from "typings/ListOfCountries";
 
 type Props = {
-  client: ApolloClient<any>;
+  client: ApolloClient<NormalizedCacheObject>;
   countries: ListOfCountries;
 };
 

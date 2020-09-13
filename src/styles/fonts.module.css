@@ -1,36 +1,54 @@
+:root {
+  --font-weight-thin: 400;
+  --font-weight-medium: 500;
+  --font-weight-bold: 600;
+  --font-padding-bottom: 4px;
+  --font-padding-top: 4px;
+}
+
 h1 {
   color: var(--color-font-headline);
   font-size: 3rem;
-  font-weight: 600;
+  font-weight: var(--font-weight-bold);
   margin: 0;
+  padding-bottom: var(--font-padding-bottom);
+  padding-top: var(--font-padding-top);
 }
 
 h2 {
   color: var(--color-font-headline);
   font-size: 1.7rem;
-  font-weight: 600;
+  font-weight: var(--font-weight-bold);
   margin: 0;
+  padding-bottom: var(--font-padding-bottom);
+  padding-top: var(--font-padding-top);
 }
 
 h3 {
   color: var(--color-font-headline);
   font-size: 1.1rem;
-  font-weight: 600;
+  font-weight: var(--font-weight-bold);
   margin: 0;
+  padding-bottom: var(--font-padding-bottom);
+  padding-top: var(--font-padding-top);
 }
 
 h4 {
   color: var(--color-font-headline);
   font-size: 0.8rem;
-  font-weight: 600;
+  font-weight: var(--font-weight-bold);
   margin: 0;
+  padding-bottom: var(--font-padding-bottom);
+  padding-top: var(--font-padding-top);
 }
 
 h5 {
   color: var(--color-font-headline);
   font-size: 1rem;
-  font-weight: 400;
+  font-weight: var(--font-weight-thin);
   margin: 0;
+  padding-bottom: var(--font-padding-bottom);
+  padding-top: var(--font-padding-top);
 }
 
 @font-face {
@@ -42,9 +60,10 @@ p {
   color: var(--color-font-paragraph);
   filter: brightness(0.75);
   font-size: 0.7rem;
-  font-weight: 500;
-  line-height: 1.3rem;
+  font-weight: var(--font-weight-medium);
   margin: 0;
+  padding-bottom: var(--font-padding-bottom);
+  padding-top: var(--font-padding-top);
 }
 
 @import "./colors.module.css";
