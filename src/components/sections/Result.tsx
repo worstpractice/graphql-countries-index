@@ -1,10 +1,10 @@
 import { Countries } from "components/collections/Countries";
 import { Tally } from "components/content/Tally";
 import { useGetCountriesQuery } from "hooks/generated";
-import { useStore } from "hooks/useStore";
 import React from "react";
+import type { State } from "store";
+import { useStore } from "store";
 import type { FC } from "typings/FC";
-import type { State } from "typings/State";
 import styles from "./Result.module.css";
 
 type Props = {};

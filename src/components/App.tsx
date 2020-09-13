@@ -11,10 +11,10 @@ import { Background } from "components/ui/effects/Background";
 import { Header } from "components/ui/structures/Header";
 import { Main } from "components/ui/structures/Main";
 import { Pillar } from "components/ui/structures/Pillar";
-import { useStore } from "hooks/useStore";
 import React from "react";
+import type { State } from "store";
+import { useStore } from "store";
 import type { FC } from "typings/FC";
-import type { State } from "typings/State";
 
 type Props = {};
 

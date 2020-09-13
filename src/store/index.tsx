@@ -1,9 +1,24 @@
-import type { State } from "typings/State";
 import create from "zustand";
 import { combine } from "zustand/middleware";
 
+type Data = {
+  isModalOpen: boolean;
+  searchTerm: string;
+  selectedCountry: string;
+};
+
+type Actions = {
+  closeModal: () => void;
+  openModal: () => void;
+  setSearchTerm: (to: string) => void;
+  setSelectedCountry: (to: string) => void;
+  toggleModal: () => void;
+};
+
+export type State = Data & Actions;
+
 export const useStore = create<State>(
-  combine(
+  combine<Data, Actions>(
     {
       isModalOpen: false,
       searchTerm: "",

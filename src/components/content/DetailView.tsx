@@ -4,10 +4,10 @@ import { Tally } from "components/content/Tally";
 import { Flag } from "components/portraits/Flag";
 import { useGetCountryQuery } from "hooks/generated";
 import { useClickOutside } from "hooks/useClickOutside";
-import { useStore } from "hooks/useStore";
 import React, { useRef } from "react";
+import type { State } from "store";
+import { useStore } from "store";
 import type { FC } from "typings/FC";
-import type { State } from "typings/State";
 import { blindPick } from "utils/blindPick";
 import styles from "./DetailView.module.css";
 

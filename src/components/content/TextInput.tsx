@@ -1,7 +1,7 @@
-import { useStore } from "hooks/useStore";
 import React, { ChangeEventHandler, useEffect, useRef } from "react";
+import type { State } from "store";
+import { useStore } from "store";
 import type { FC } from "typings/FC";
-import type { State } from "typings/State";
 import styles from "./TextInput.module.css";
 
 type Props = {};

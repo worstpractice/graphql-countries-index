@@ -3,11 +3,11 @@ import { GetCountry } from "api/queries";
 import { ContentCard } from "components/content/ContentCard";
 import { Summary } from "components/content/Summary";
 import { Flag } from "components/portraits/Flag";
-import { useStore } from "hooks/useStore";
 import React from "react";
+import type { State } from "store";
+import { useStore } from "store";
 import type { FC } from "typings/FC";
 import type { ListOfCountries } from "typings/ListOfCountries";
-import type { State } from "typings/State";
 
 type Props = {
   client: ApolloClient<any>;
