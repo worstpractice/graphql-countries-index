@@ -19,7 +19,7 @@ import type { Country } from "typings/generated";
 type Props = {};
 
 export const App: FC<Props> = () => {
-  const [searchTerm, setSearchTerm] = useState("");
+  const [searchTerm, setSearchTerm] = useState("b");
   const [selectedCountry, setSelectedCountry] = useState<Country["code"]>("");
   const [isModalOpen, openModal, closeModal] = useToggle();
 
