@@ -23,12 +23,10 @@
 .subtitle {
   margin-top: 10px;
   padding-left: 7.5%;
-  padding-right: 25%;
 }
 
 .title {
   padding-left: 7.5%;
-  padding-right: 25%;
 }
 
 @media only screen and (max-width: 800px) {
