@@ -13,53 +13,53 @@ export type Scalars = {
 export type CacheControlScope = "PUBLIC" | "PRIVATE";
 
 export type Continent = {
-  code: Scalars["ID"];
-  name: Scalars["String"];
-  countries: Array<Country>;
+  readonly code: Scalars["ID"];
+  readonly name: Scalars["String"];
+  readonly countries: ReadonlyArray<Country>;
 };
 
 export type ContinentFilterInput = {
-  code?: Maybe<StringQueryOperatorInput>;
+  readonly code?: Maybe<StringQueryOperatorInput>;
 };
 
 export type Country = {
-  code: Scalars["ID"];
-  name: Scalars["String"];
-  native: Scalars["String"];
-  phone: Scalars["String"];
-  continent: Continent;
-  capital?: Maybe<Scalars["String"]>;
-  currency?: Maybe<Scalars["String"]>;
-  languages: Array<Language>;
-  emoji: Scalars["String"];
-  emojiU: Scalars["String"];
-  states: Array<State>;
+  readonly code: Scalars["ID"];
+  readonly name: Scalars["String"];
+  readonly native: Scalars["String"];
+  readonly phone: Scalars["String"];
+  readonly continent: Continent;
+  readonly capital?: Maybe<Scalars["String"]>;
+  readonly currency?: Maybe<Scalars["String"]>;
+  readonly languages: ReadonlyArray<Language>;
+  readonly emoji: Scalars["String"];
+  readonly emojiU: Scalars["String"];
+  readonly states: ReadonlyArray<State>;
 };
 
 export type CountryFilterInput = {
-  code?: Maybe<StringQueryOperatorInput>;
-  currency?: Maybe<StringQueryOperatorInput>;
-  continent?: Maybe<StringQueryOperatorInput>;
+  readonly code?: Maybe<StringQueryOperatorInput>;
+  readonly currency?: Maybe<StringQueryOperatorInput>;
+  readonly continent?: Maybe<StringQueryOperatorInput>;
 };
 
 export type Language = {
-  code: Scalars["ID"];
-  name?: Maybe<Scalars["String"]>;
-  native?: Maybe<Scalars["String"]>;
-  rtl: Scalars["Boolean"];
+  readonly code: Scalars["ID"];
+  readonly name?: Maybe<Scalars["String"]>;
+  readonly native?: Maybe<Scalars["String"]>;
+  readonly rtl: Scalars["Boolean"];
 };
 
 export type LanguageFilterInput = {
-  code?: Maybe<StringQueryOperatorInput>;
+  readonly code?: Maybe<StringQueryOperatorInput>;
 };
 
 export type Query = {
-  continents: Array<Continent>;
-  continent?: Maybe<Continent>;
-  countries: Array<Country>;
-  country?: Maybe<Country>;
-  languages: Array<Language>;
-  language?: Maybe<Language>;
+  readonly continents: ReadonlyArray<Continent>;
+  readonly continent?: Maybe<Continent>;
+  readonly countries: ReadonlyArray<Country>;
+  readonly country?: Maybe<Country>;
+  readonly languages: ReadonlyArray<Language>;
+  readonly language?: Maybe<Language>;
 };
 
 export type QueryContinentsArgs = {
@@ -87,27 +87,27 @@ export type QueryLanguageArgs = {
 };
 
 export type State = {
-  code?: Maybe<Scalars["String"]>;
-  name: Scalars["String"];
-  country: Country;
+  readonly code?: Maybe<Scalars["String"]>;
+  readonly name: Scalars["String"];
+  readonly country: Country;
 };
 
 export type StringQueryOperatorInput = {
-  eq?: Maybe<Scalars["String"]>;
-  ne?: Maybe<Scalars["String"]>;
-  in?: Maybe<Array<Maybe<Scalars["String"]>>>;
-  nin?: Maybe<Array<Maybe<Scalars["String"]>>>;
-  regex?: Maybe<Scalars["String"]>;
-  glob?: Maybe<Scalars["String"]>;
+  readonly eq?: Maybe<Scalars["String"]>;
+  readonly ne?: Maybe<Scalars["String"]>;
+  readonly in?: Maybe<ReadonlyArray<Maybe<Scalars["String"]>>>;
+  readonly nin?: Maybe<ReadonlyArray<Maybe<Scalars["String"]>>>;
+  readonly regex?: Maybe<Scalars["String"]>;
+  readonly glob?: Maybe<Scalars["String"]>;
 };
 
 export type GetCountriesQueryVariables = Exact<{ [key: string]: never }>;
 
 export type GetCountriesQuery = {
-  countries: Array<
+  readonly countries: ReadonlyArray<
     Pick<Country, "capital" | "code" | "currency" | "name"> & {
-      continent: Pick<Continent, "name">;
-      languages: Array<Pick<Language, "name">>;
+      readonly continent: Pick<Continent, "name">;
+      readonly languages: ReadonlyArray<Pick<Language, "name">>;
     }
   >;
 };
@@ -117,14 +117,14 @@ export type GetCountryQueryVariables = Exact<{
 }>;
 
 export type GetCountryQuery = {
-  country?: Maybe<
+  readonly country?: Maybe<
     Pick<Country, "capital" | "currency" | "name"> & {
-      languages: Array<Pick<Language, "name">>;
-      continent: Pick<Continent, "name"> & {
-        countries: Array<
+      readonly languages: ReadonlyArray<Pick<Language, "name">>;
+      readonly continent: Pick<Continent, "name"> & {
+        readonly countries: ReadonlyArray<
           Pick<Country, "capital" | "code" | "currency" | "name"> & {
-            continent: Pick<Continent, "name">;
-            languages: Array<Pick<Language, "name">>;
+            readonly continent: Pick<Continent, "name">;
+            readonly languages: ReadonlyArray<Pick<Language, "name">>;
           }
         >;
       };

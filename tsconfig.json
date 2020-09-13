@@ -30,7 +30,7 @@
     "noUnusedParameters": false,
     "pretty": true,
     "resolveJsonModule": true,
-    "skipDefaultLibCheck": false,
+    "skipDefaultLibCheck": true,
     "skipLibCheck": false,
     "strict": true,
     "strictBindCallApply": true,
@@ -42,12 +42,9 @@
     "target": "ESNext"
   },
   "exclude": [
-    "**/node_modules/**"
+    "node_modules"
   ],
   "typeAcquisition": {
     "enable": true
-  },
-  "include": [
-    "src"
-  ]
+  }
 }

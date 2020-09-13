@@ -10,7 +10,7 @@ generates:
       enumsAsTypes: true
       enumsAsConst: true
       flattenGeneratedTypes: true
-      immutableTypes: false
+      immutableTypes: true
       noExport: false
       skipTypename: true
       useTypeImports: true
@@ -24,7 +24,7 @@ generates:
       enumsAsTypes: true
       enumsAsConst: true
       flattenGeneratedTypes: true
-      immutableTypes: false
+      immutableTypes: true
       skipTypename: true
       useTypeImports: true
       withComponent: false

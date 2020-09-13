@@ -6,6 +6,7 @@ import type {
   GetCountryQuery,
   GetCountryQueryVariables,
 } from "typings/generated";
+
 export const CountryDetailsFragmentDoc = gql`
   fragment countryDetails on Country {
     capital
