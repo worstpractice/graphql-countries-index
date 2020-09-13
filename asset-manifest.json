@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/graphql-countries-index/static/css/main.22b73c8a.chunk.css",
+    "main.css": "/graphql-countries-index/static/css/main.b43eb31a.chunk.css",
     "main.js": "/graphql-countries-index/static/js/main.e2fb177d.chunk.js",
     "main.js.map": "/graphql-countries-index/static/js/main.e2fb177d.chunk.js.map",
     "runtime-main.js": "/graphql-countries-index/static/js/runtime-main.29904532.js",
@@ -9,10 +9,10 @@
     "static/js/2.71d56337.chunk.js": "/graphql-countries-index/static/js/2.71d56337.chunk.js",
     "static/js/2.71d56337.chunk.js.map": "/graphql-countries-index/static/js/2.71d56337.chunk.js.map",
     "index.html": "/graphql-countries-index/index.html",
-    "precache-manifest.dc6e56e17cc193ede8dca2820f07aa28.js": "/graphql-countries-index/precache-manifest.dc6e56e17cc193ede8dca2820f07aa28.js",
+    "precache-manifest.7696a68b7593c980a7e64551904cf530.js": "/graphql-countries-index/precache-manifest.7696a68b7593c980a7e64551904cf530.js",
     "service-worker.js": "/graphql-countries-index/service-worker.js",
     "static/css/2.bb59309b.chunk.css.map": "/graphql-countries-index/static/css/2.bb59309b.chunk.css.map",
-    "static/css/main.22b73c8a.chunk.css.map": "/graphql-countries-index/static/css/main.22b73c8a.chunk.css.map",
+    "static/css/main.b43eb31a.chunk.css.map": "/graphql-countries-index/static/css/main.b43eb31a.chunk.css.map",
     "static/js/2.71d56337.chunk.js.LICENSE.txt": "/graphql-countries-index/static/js/2.71d56337.chunk.js.LICENSE.txt",
     "static/media/AQ.png": "/graphql-countries-index/static/media/AQ.b5b8189c.png",
     "static/media/BL.png": "/graphql-countries-index/static/media/BL.d7a63f32.png",
@@ -26,7 +26,7 @@
     "static/js/runtime-main.29904532.js",
     "static/css/2.bb59309b.chunk.css",
     "static/js/2.71d56337.chunk.js",
-    "static/css/main.22b73c8a.chunk.css",
+    "static/css/main.b43eb31a.chunk.css",
     "static/js/main.e2fb177d.chunk.js"
   ]
 }
