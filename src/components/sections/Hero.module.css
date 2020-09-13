@@ -31,15 +31,8 @@
   padding-right: 25%;
 }
 
-@media only screen and (max-width: 500px) {
-  .hero {
-    min-height: 150px;
-  }
-}
-
 @media only screen and (max-width: 800px) {
   .hero {
-    background-position: -800px -125px;
     flex: 2;
     min-height: 150px;
   }
