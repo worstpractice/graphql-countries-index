@@ -9,10 +9,9 @@
   text-rendering: optimizeLegibility;
 }
 
-@media only screen and (max-width: 800px) {
-  body {
-    overflow: scroll scroll;
-  }
+body {
+  height: 100vh;
+  width: 100vw;
 }
 
 @import "./colors.module.css";
