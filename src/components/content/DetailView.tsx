@@ -4,22 +4,21 @@ import { Tally } from "components/content/Tally";
 import { Flag } from "components/portraits/Flag";
 import { useGetCountryQuery } from "hooks/generated";
 import { useClickOutside } from "hooks/useClickOutside";
+import { useStore } from "hooks/useStore";
 import React, { useRef } from "react";
 import type { FC } from "typings/FC";
 import type { Country } from "typings/generated";
 import { blindPick } from "utils/atRandom";
 import styles from "./DetailView.module.css";
 
-type Props = {
-  countryCode: Country["code"];
-  onClick: (countryName: string) => void;
-  onClickOutside: EventListener;
-};
+type Props = {};
 
-export const DetailView: FC<Props> = ({ countryCode, onClick, onClickOutside }) => {
+export const DetailView: FC<Props> = () => {
+  const { closeModal, openModal, selectedCountry, setSelectedCountry } = useStore();
+
   const clickOutsideRef = useRef<HTMLDivElement>(null);
-  useClickOutside(clickOutsideRef, onClickOutside);
-  const { client, data, error, loading } = useGetCountryQuery({ variables: { code: countryCode } });
+  useClickOutside(clickOutsideRef, closeModal);
+  const { client, data, error, loading } = useGetCountryQuery({ variables: { code: selectedCountry } });
 
   /** In a real project, this would be good place to present a loading indicator, do graceful error handling, etc. */
   if (loading || error || !data) {
@@ -46,13 +45,18 @@ export const DetailView: FC<Props> = ({ countryCode, onClick, onClickOutside }) 
 
   const randomTrio = blindPick(relatedCountries, 3);
 
+  const handleCardClick = (countryCode: Country["code"]) => {
+    setSelectedCountry(countryCode);
+    openModal();
+  };
+
   return (
     <div className={styles.detailView} ref={clickOutsideRef}>
-      <Flag countryCode={countryCode} />
+      <Flag countryCode={selectedCountry} />
       <Summary continent={continent.name} country={ownName} />
       <div className={styles.miniResults}>
         <h4>Other countries in {continent.name}</h4>
-        <Countries client={client} countries={randomTrio} onClick={onClick} />
+        <Countries client={client} countries={randomTrio} onClick={handleCardClick} />
       </div>
       <Tally relatedCountries={relatedCountries.length} />
     </div>

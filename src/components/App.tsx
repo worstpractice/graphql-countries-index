@@ -11,34 +11,14 @@ import { Background } from "components/ui/effects/Background";
 import { Header } from "components/ui/structures/Header";
 import { Main } from "components/ui/structures/Main";
 import { Pillar } from "components/ui/structures/Pillar";
-import { useToggle } from "hooks/useToggle";
-import React, { ChangeEventHandler, useState } from "react";
+import { useStore } from "hooks/useStore";
+import React from "react";
 import type { FC } from "typings/FC";
-import type { Country } from "typings/generated";
 
 type Props = {};
 
 export const App: FC<Props> = () => {
-  const [searchTerm, setSearchTerm] = useState("b");
-  const [selectedCountry, setSelectedCountry] = useState<Country["code"]>("");
-  const [isModalOpen, openModal, closeModal] = useToggle();
-
-  const handleSearchInput: ChangeEventHandler<HTMLInputElement> = ({ target }) => {
-    const searchInput = target.value.trim();
-
-    if (!searchInput) {
-      return setSearchTerm("");
-    }
-
-    if (searchInput.length < 30) {
-      setSearchTerm(searchInput.toLowerCase());
-    }
-  };
-
-  const handleCardClick = (countryCode: Country["code"]) => {
-    setSelectedCountry(countryCode);
-    openModal();
-  };
+  const { isModalOpen } = useStore();
 
   return (
     <Background>
@@ -51,16 +31,16 @@ export const App: FC<Props> = () => {
           <FlexContainer>
             <Hero subtitle="Sit Dolor" title="Lorem Ipsum" />
             <Search>
-              <TextInput onChange={handleSearchInput} placeholder="Search for a country" value={searchTerm} />
+              <TextInput placeholder="Search for a country" />
             </Search>
-            <Result searchString={searchTerm} onClick={handleCardClick} />
+            <Result />
           </FlexContainer>
         </Main>
         <Pillar size="big" />
       </GridContainer>
       {isModalOpen && (
         <FullScreenModal>
-          <DetailView countryCode={selectedCountry} onClick={handleCardClick} onClickOutside={closeModal} />
+          <DetailView />
         </FullScreenModal>
       )}
     </Background>
