@@ -1,28 +1,32 @@
+import type { State } from "typings/State";
 import create from "zustand";
 import { combine } from "zustand/middleware";
 
-export const useStore = create(
+export const useStore = create<State>(
   combine(
-    { searchTerm: "", selectedCountry: "", isModalOpen: false },
+    {
+      isModalOpen: false,
+      searchTerm: "",
+      selectedCountry: "",
+    },
 
-    (set) => ({
-      setSearchTerm(to: string) {
-        set(() => ({ searchTerm: to }));
-      },
-
-      setSelectedCountry(to: string) {
-        set(() => ({ selectedCountry: to }));
-      },
-
-      openModal() {
-        set(() => ({ isModalOpen: true }));
-      },
-      closeModal() {
-        set(() => ({ isModalOpen: false }));
-      },
-      toggleModal() {
-        set((state) => ({ isModalOpen: !state.isModalOpen }));
-      },
-    }),
+    (set) =>
+      ({
+        closeModal() {
+          set(() => ({ isModalOpen: false }));
+        },
+        openModal() {
+          set(() => ({ isModalOpen: true }));
+        },
+        setSearchTerm(to: string) {
+          set(() => ({ searchTerm: to }));
+        },
+        setSelectedCountry(to: string) {
+          set(() => ({ selectedCountry: to }));
+        },
+        toggleModal() {
+          set((state) => ({ isModalOpen: !state.isModalOpen }));
+        },
+      } as const),
   ),
 );

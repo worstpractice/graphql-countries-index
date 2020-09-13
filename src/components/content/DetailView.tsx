@@ -7,13 +7,18 @@ import { useClickOutside } from "hooks/useClickOutside";
 import { useStore } from "hooks/useStore";
 import React, { useRef } from "react";
 import type { FC } from "typings/FC";
+import type { State } from "typings/State";
 import { blindPick } from "utils/blindPick";
 import styles from "./DetailView.module.css";
 
 type Props = {};
 
+const selector = ({ closeModal, selectedCountry }: State) => {
+  return [closeModal, selectedCountry] as const;
+};
+
 export const DetailView: FC<Props> = () => {
-  const { closeModal, selectedCountry } = useStore();
+  const [closeModal, selectedCountry] = useStore(selector);
 
   const clickOutsideRef = useRef<HTMLDivElement>(null);
   useClickOutside(clickOutsideRef, closeModal);

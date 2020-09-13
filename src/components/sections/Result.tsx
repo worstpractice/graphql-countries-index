@@ -4,12 +4,17 @@ import { useGetCountriesQuery } from "hooks/generated";
 import { useStore } from "hooks/useStore";
 import React from "react";
 import type { FC } from "typings/FC";
+import type { State } from "typings/State";
 import styles from "./Result.module.css";
 
 type Props = {};
 
+const selector = ({ searchTerm }: State) => {
+  return [searchTerm] as const;
+};
+
 export const Result: FC<Props> = () => {
-  const { searchTerm } = useStore();
+  const [searchTerm] = useStore(selector);
   const { client, data, error, loading } = useGetCountriesQuery();
 
   // Short-circuit in order of fastest-to-check.

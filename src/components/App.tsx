@@ -14,11 +14,16 @@ import { Pillar } from "components/ui/structures/Pillar";
 import { useStore } from "hooks/useStore";
 import React from "react";
 import type { FC } from "typings/FC";
+import type { State } from "typings/State";
 
 type Props = {};
 
+const selector = ({ isModalOpen }: State) => {
+  return [isModalOpen] as const;
+};
+
 export const App: FC<Props> = () => {
-  const { isModalOpen } = useStore();
+  const [isModalOpen] = useStore(selector);
 
   return (
     <Background>

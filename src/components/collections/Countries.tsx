@@ -7,14 +7,19 @@ import { useStore } from "hooks/useStore";
 import React from "react";
 import type { FC } from "typings/FC";
 import type { ListOfCountries } from "typings/ListOfCountries";
+import type { State } from "typings/State";
 
 type Props = {
   client: ApolloClient<any>;
   countries: ListOfCountries;
 };
 
+const selector = ({ openModal, setSelectedCountry }: State) => {
+  return [openModal, setSelectedCountry] as const;
+};
+
 export const Countries: FC<Props> = ({ client, countries }) => {
-  const { openModal, setSelectedCountry } = useStore();
+  const [openModal, setSelectedCountry] = useStore(selector);
 
   return (
     <>

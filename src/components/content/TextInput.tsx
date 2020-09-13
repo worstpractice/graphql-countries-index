@@ -1,12 +1,17 @@
 import { useStore } from "hooks/useStore";
 import React, { ChangeEventHandler, useEffect, useRef } from "react";
 import type { FC } from "typings/FC";
+import type { State } from "typings/State";
 import styles from "./TextInput.module.css";
 
 type Props = {};
 
+const selector = ({ setSearchTerm, searchTerm }: State) => {
+  return [setSearchTerm, searchTerm] as const;
+};
+
 export const TextInput: FC<Props> = () => {
-  const { setSearchTerm, searchTerm } = useStore();
+  const [setSearchTerm, searchTerm] = useStore(selector);
   const inputRef = useRef<HTMLInputElement>(null);
 
   useEffect(function focusTextInputOnPageLoad() {
