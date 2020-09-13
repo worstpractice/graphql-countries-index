@@ -10,7 +10,7 @@ input::-webkit-input-placeholder {
   font-style: italic;
   font-weight: 500;
   line-height: 1.8rem;
-  opacity: 50%;
+  opacity: 50% !important;
   padding-left: 20px;
 }
 
