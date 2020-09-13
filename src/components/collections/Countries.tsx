@@ -21,11 +21,20 @@ const selector = ({ openModal, setSelectedCountry }: State) => ({
 
 export const Countries: FC<Props> = ({ client, countries }) => {
   const { openModal, setSelectedCountry } = useStore(selector);
+  /** We want `isModalOpen` value to be maximally reactive, so we keep the store reference. */
+  const store = useStore();
 
   return (
     <>
       {countries.map(({ code, name, ...countryFacts }) => {
         const handleInteraction = () => {
+          /** This is necessary to prevent closing over a stale value. */
+          if (store.isModalOpen) {
+            console.log("Modal was open, returning...");
+          }
+
+          console.log("Modal was closed! Proceeding...");
+
           setSelectedCountry(code);
           openModal();
         };
