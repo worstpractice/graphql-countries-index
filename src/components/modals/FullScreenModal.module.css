@@ -10,7 +10,8 @@
   right: 0;
   top: 0;
   width: 100%;
-  z-index: 1337;
+  z-index: var(--altitiude-abovest);
 }
 
+@import "../../styles/altitudes.module.css";
 @import "../../styles/colors.module.css";
