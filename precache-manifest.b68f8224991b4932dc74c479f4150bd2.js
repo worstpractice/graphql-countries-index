@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "37b163c32e41220f1b7b9c9cd7cc1f6b",
+    "revision": "961cb677935bda56fdca2c3a1e9afd74",
     "url": "/graphql-countries-index/index.html"
   },
   {
@@ -8,7 +8,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/graphql-countries-index/static/css/2.bb59309b.chunk.css"
   },
   {
-    "revision": "13bb171f6eedc2236a32",
+    "revision": "fe50c26f1033bde816b7",
     "url": "/graphql-countries-index/static/css/main.664ac09e.chunk.css"
   },
   {
@@ -20,8 +20,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/graphql-countries-index/static/js/2.71d56337.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "13bb171f6eedc2236a32",
-    "url": "/graphql-countries-index/static/js/main.e675db3f.chunk.js"
+    "revision": "fe50c26f1033bde816b7",
+    "url": "/graphql-countries-index/static/js/main.aa9ac7af.chunk.js"
   },
   {
     "revision": "3b2ceec6ff2b08c2f10e",
