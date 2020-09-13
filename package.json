@@ -40,12 +40,13 @@
   "name": "graphql-countries-index",
   "private": true,
   "scripts": {
-    "build": "react-scripts build",
+    "build": "yarn clean && react-scripts build",
+    "clean": "node ./clean.js",
     "codegen": "graphql-codegen && yarn fmt",
     "deploy": "gh-pages -d build",
     "fmt": "prettier --loglevel silent -u -w ./src/**/*.{ts,tsx,d.ts}",
     "predeploy": "yarn build",
-    "push": "git push && yarn deploy",
+    "push": "git push && yarn deploy && yarn clean",
     "start": "react-scripts start"
   },
   "version": "0.1.0"

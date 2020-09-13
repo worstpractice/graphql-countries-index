@@ -44,9 +44,10 @@
       "./node_modules/@types/**/*.d.ts"
     ]
   },
-  "exclude": [
-    "build",
-    "node_modules"
+  "include": [
+    "!**/node_modules/**/*",
+    "!./build",
+    "./src"
   ],
   "typeAcquisition": {
     "enable": true
