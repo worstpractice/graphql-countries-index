@@ -1,10 +1,10 @@
-import { Hero } from "components/sections/Hero";
-import { Result } from "components/sections/Result";
-import { Search } from "components/sections/Search";
 import { DetailView } from "components/content/DetailView";
 import { TextInput } from "components/content/TextInput";
 import { FullScreenModal } from "components/modals/FullScreenModal";
 import { Logo } from "components/portraits/Logo";
+import { Hero } from "components/sections/Hero";
+import { Result } from "components/sections/Result";
+import { Search } from "components/sections/Search";
 import { FlexContainer } from "components/ui/containers/FlexContainer";
 import { GridContainer } from "components/ui/containers/GridContainer";
 import { Background } from "components/ui/effects/Background";
