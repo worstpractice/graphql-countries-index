@@ -35,6 +35,7 @@ export const TextInput: FC<Props> = () => {
     <input
       className={styles.textInput}
       id="textInput"
+      inputMode="search"
       onChange={handleSearchInput}
       placeholder="Search for a country"
       ref={inputRef}
