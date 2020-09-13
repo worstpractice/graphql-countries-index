@@ -1,6 +1,4 @@
-import { ReactNode, useEffect } from "react";
-import React from "react";
-import { useInView } from "react-intersection-observer";
+import React, { ReactNode } from "react";
 import type { FC } from "typings/FC";
 import styles from "./Header.module.css";
 
@@ -9,20 +7,5 @@ type Props = {
 };
 
 export const Header: FC<Props> = ({ children }) => {
-  const [inViewRef, isInView] = useInView();
-
-  useEffect(
-    function restoreMobileViewport() {
-      if (!isInView) {
-        window.scrollTo(0, 0);
-      }
-    },
-    [isInView],
-  );
-
-  return (
-    <header className={styles.header} ref={inViewRef}>
-      {children}
-    </header>
-  );
+  return <header className={styles.header}>{children}</header>;
 };

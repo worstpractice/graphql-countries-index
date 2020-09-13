@@ -2,6 +2,7 @@ import React, { ChangeEventHandler, useEffect, useRef } from "react";
 import type { State } from "store";
 import { useStore } from "store";
 import type { FC } from "typings/FC";
+import { correctMobileViewport } from "utils/correctMobileViewport";
 import styles from "./TextInput.module.css";
 
 type Props = {};
@@ -20,6 +21,7 @@ export const TextInput: FC<Props> = () => {
   }, []);
 
   const handleSearchInput: ChangeEventHandler<HTMLInputElement> = ({ target }) => {
+    correctMobileViewport();
     const searchInput = target.value.trim();
 
     if (!searchInput) {
