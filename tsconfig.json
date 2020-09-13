@@ -44,7 +44,11 @@
       "./node_modules/@types/**/*.d.ts"
     ]
   },
+  "exclude": [
+    "./node_modules/ts-invariant/**/*.*"
+  ],
   "include": [
+    "!./node_modules/ts-invariant/**/*",
     "!**/node_modules/**/*",
     "!./build",
     "./src"
