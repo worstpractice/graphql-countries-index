@@ -1,18 +1,18 @@
 {
   "files": {
-    "main.css": "/graphql-countries-index/static/css/main.aeb35426.chunk.css",
-    "main.js": "/graphql-countries-index/static/js/main.be3eebad.chunk.js",
-    "main.js.map": "/graphql-countries-index/static/js/main.be3eebad.chunk.js.map",
+    "main.css": "/graphql-countries-index/static/css/main.c8685478.chunk.css",
+    "main.js": "/graphql-countries-index/static/js/main.ebd042b0.chunk.js",
+    "main.js.map": "/graphql-countries-index/static/js/main.ebd042b0.chunk.js.map",
     "runtime-main.js": "/graphql-countries-index/static/js/runtime-main.29904532.js",
     "runtime-main.js.map": "/graphql-countries-index/static/js/runtime-main.29904532.js.map",
     "static/css/2.bb59309b.chunk.css": "/graphql-countries-index/static/css/2.bb59309b.chunk.css",
     "static/js/2.a23fe439.chunk.js": "/graphql-countries-index/static/js/2.a23fe439.chunk.js",
     "static/js/2.a23fe439.chunk.js.map": "/graphql-countries-index/static/js/2.a23fe439.chunk.js.map",
     "index.html": "/graphql-countries-index/index.html",
-    "precache-manifest.783d616eb6bd3c428dc21846049f9979.js": "/graphql-countries-index/precache-manifest.783d616eb6bd3c428dc21846049f9979.js",
+    "precache-manifest.aa54465b02e7d8afb240229c40adc43b.js": "/graphql-countries-index/precache-manifest.aa54465b02e7d8afb240229c40adc43b.js",
     "service-worker.js": "/graphql-countries-index/service-worker.js",
     "static/css/2.bb59309b.chunk.css.map": "/graphql-countries-index/static/css/2.bb59309b.chunk.css.map",
-    "static/css/main.aeb35426.chunk.css.map": "/graphql-countries-index/static/css/main.aeb35426.chunk.css.map",
+    "static/css/main.c8685478.chunk.css.map": "/graphql-countries-index/static/css/main.c8685478.chunk.css.map",
     "static/js/2.a23fe439.chunk.js.LICENSE.txt": "/graphql-countries-index/static/js/2.a23fe439.chunk.js.LICENSE.txt",
     "static/media/AQ.png": "/graphql-countries-index/static/media/AQ.b5b8189c.png",
     "static/media/BL.png": "/graphql-countries-index/static/media/BL.d7a63f32.png",
@@ -26,7 +26,7 @@
     "static/js/runtime-main.29904532.js",
     "static/css/2.bb59309b.chunk.css",
     "static/js/2.a23fe439.chunk.js",
-    "static/css/main.aeb35426.chunk.css",
-    "static/js/main.be3eebad.chunk.js"
+    "static/css/main.c8685478.chunk.css",
+    "static/js/main.ebd042b0.chunk.js"
   ]
 }
