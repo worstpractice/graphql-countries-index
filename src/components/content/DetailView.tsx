@@ -1,23 +1,26 @@
+import { GetCountry } from "api/queries";
 import { ContentCard } from "components/content/ContentCard";
 import { Summary } from "components/content/Summary";
 import { Tally } from "components/content/Tally";
 import { Flag } from "components/portraits/Flag";
-import { useCountryQuery } from "hooks/generated";
+import { useGetCountryQuery } from "hooks/generated";
 import { useClickOutside } from "hooks/useClickOutside";
 import React, { useRef } from "react";
 import type { FC } from "typings/FC";
 import type { Country } from "typings/generated";
+import { blindPick } from "utils/atRandom";
 import styles from "./DetailView.module.css";
 
 type Props = {
   countryCode: Country["code"];
+  onClick: (countryName: string) => void;
   onClickOutside: EventListener;
 };
 
-export const DetailView: FC<Props> = ({ countryCode, onClickOutside }) => {
+export const DetailView: FC<Props> = ({ countryCode, onClick, onClickOutside }) => {
   const clickOutsideRef = useRef<HTMLDivElement>(null);
   useClickOutside(clickOutsideRef, onClickOutside);
-  const { data, error, loading } = useCountryQuery({ variables: { code: countryCode } });
+  const { client, data, error, loading } = useGetCountryQuery({ variables: { code: countryCode } });
 
   /** In a real project, this would be good place to present a loading indicator, do graceful error handling, etc. */
   if (loading || error || !data) {
@@ -30,25 +33,37 @@ export const DetailView: FC<Props> = ({ countryCode, onClickOutside }) => {
     return null;
   }
 
-  const { name, continent } = country;
+  const { name: ownName, continent } = country;
 
-  const { countries: relatedCountries } = continent;
+  const { countries } = continent;
 
-  if (!relatedCountries) {
+  if (!countries) {
     return null;
   }
 
-  const firstThree = relatedCountries.slice(0, 3);
+  const relatedCountries = countries.filter(function byName({ name }) {
+    return name !== ownName;
+  });
+
+  const randomTrio = blindPick(relatedCountries, 3);
 
   return (
     <div className={styles.detailView} ref={clickOutsideRef}>
       <Flag countryCode={countryCode} />
-      <Summary continent={continent.name} country={name} />
+      <Summary continent={continent.name} country={ownName} />
       <div className={styles.miniResults}>
         <h4>Other countries in {continent.name}</h4>
-        {firstThree.map(({ code, name, ...countryFacts }) => {
+        {randomTrio.map(({ code, name, ...countryFacts }) => {
+          const handleClick = () => {
+            onClick(code);
+          };
+
+          const prefetchCountryData = () => {
+            client.query({ query: GetCountry, variables: { code } });
+          };
+
           return (
-            <ContentCard key={name} look="detail">
+            <ContentCard key={name} onClick={handleClick} onMouseOver={prefetchCountryData}>
               <Flag countryCode={code} />
               <Summary country={name} facts={countryFacts} />
             </ContentCard>

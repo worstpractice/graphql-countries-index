@@ -1,9 +1,9 @@
-import { Country } from "api/queries";
+import { GetCountry } from "api/queries";
 import { ContentCard } from "components/content/ContentCard";
 import { Summary } from "components/content/Summary";
 import { Tally } from "components/content/Tally";
 import { Flag } from "components/portraits/Flag";
-import { useCountriesQuery } from "hooks/generated";
+import { useGetCountriesQuery } from "hooks/generated";
 import React from "react";
 import type { FC } from "typings/FC";
 import styles from "./Result.module.css";
@@ -14,7 +14,7 @@ type Props = {
 };
 
 export const Result: FC<Props> = ({ onClick, searchString }) => {
-  const { client, data, error, loading } = useCountriesQuery();
+  const { client, data, error, loading } = useGetCountriesQuery();
 
   // Short-circuit in order of fastest-to-check.
   if (!searchString || loading || error || !data) {
@@ -41,11 +41,11 @@ export const Result: FC<Props> = ({ onClick, searchString }) => {
           };
 
           const prefetchCountryData = () => {
-            client.query({ query: Country, variables: { code } });
+            client.query({ query: GetCountry, variables: { code } });
           };
 
           return (
-            <ContentCard look="overview" onClick={handleClick} onMouseOver={prefetchCountryData} key={code}>
+            <ContentCard onClick={handleClick} onMouseOver={prefetchCountryData} key={code}>
               <Flag countryCode={code} />
               <Summary country={name} facts={countryFacts} />
             </ContentCard>

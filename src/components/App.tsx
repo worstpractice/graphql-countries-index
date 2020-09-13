@@ -60,7 +60,7 @@ export const App: FC<Props> = () => {
       </GridContainer>
       {isModalOpen && (
         <FullScreenModal>
-          <DetailView countryCode={selectedCountry} onClickOutside={closeModal} />
+          <DetailView countryCode={selectedCountry} onClick={handleCardClick} onClickOutside={closeModal} />
         </FullScreenModal>
       )}
     </Background>

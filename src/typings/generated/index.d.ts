@@ -101,9 +101,9 @@ export type StringQueryOperatorInput = {
   glob?: Maybe<Scalars["String"]>;
 };
 
-export type CountriesQueryVariables = Exact<{ [key: string]: never }>;
+export type GetCountriesQueryVariables = Exact<{ [key: string]: never }>;
 
-export type CountriesQuery = {
+export type GetCountriesQuery = {
   countries: Array<
     Pick<Country, "capital" | "code" | "currency" | "name"> & {
       continent: Pick<Continent, "name">;
@@ -112,11 +112,11 @@ export type CountriesQuery = {
   >;
 };
 
-export type CountryQueryVariables = Exact<{
+export type GetCountryQueryVariables = Exact<{
   code: Scalars["ID"];
 }>;
 
-export type CountryQuery = {
+export type GetCountryQuery = {
   country?: Maybe<
     Pick<Country, "capital" | "currency" | "name"> & {
       languages: Array<Pick<Language, "name">>;

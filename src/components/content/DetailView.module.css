@@ -12,6 +12,10 @@
   width: 50vh;
 }
 
+article {
+  filter: brightness(120%);
+}
+
 .flag {
   object-fit: contain;
 }

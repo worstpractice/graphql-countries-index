@@ -1,4 +1,4 @@
-.overview {
+.card {
   align-items: center;
   background: var(--color-background);
   border-radius: 5px;
@@ -14,31 +14,16 @@
   width: 100%;
 }
 
-.overview:hover {
+.card:hover {
   background: var(--color-hover-card);
 }
 
 @media only screen and (max-width: 600px) {
-  .overview {
+  .card {
     gap: 20px;
     height: 100px;
     padding-left: 15px;
   }
-}
-
-.detail {
-  align-items: center;
-  background: var(--color-hover-card);
-  border-radius: 5px;
-  box-shadow: var(--shadow);
-  display: flex;
-  gap: 30px;
-  height: 120px;
-  padding-bottom: 15px;
-  padding-left: 20px;
-  padding-right: 10px;
-  padding-top: 15px;
-  width: 100%;
 }
 
 @import "../../styles/colors.module.css";

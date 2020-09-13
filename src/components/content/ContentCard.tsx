@@ -6,12 +6,11 @@ import styles from "./ContentCard.module.css";
 
 type Props = {
   children: ReactNode;
-  look: "detail" | "overview";
   onClick?: () => void;
   onMouseOver?: () => void;
 };
 
-export const ContentCard: FC<Props> = ({ children, look, onClick = noOp(), onMouseOver = noOp() }) => {
+export const ContentCard: FC<Props> = ({ children, onClick = noOp(), onMouseOver = noOp() }) => {
   const [isPrefetched, setIsPrefetched] = useState(false);
 
   const handleMouseOver: MouseEventHandler<HTMLDivElement> = () => {
@@ -22,7 +21,7 @@ export const ContentCard: FC<Props> = ({ children, look, onClick = noOp(), onMou
   };
 
   return (
-    <article onClick={onClick} onMouseOver={handleMouseOver} className={styles[look]}>
+    <article onClick={onClick} onMouseOver={handleMouseOver} className={styles.card}>
       {children}
     </article>
   );
