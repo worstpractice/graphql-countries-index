@@ -20,10 +20,9 @@ const selector = ({ closeModal, selectedCountry }: State) => ({
 
 export const DetailView: FC<Props> = () => {
   const { closeModal, selectedCountry } = useStore(selector);
-
+  const { client, data, error, loading } = useGetCountryQuery({ variables: { code: selectedCountry } });
   const clickOutsideRef = useRef<HTMLDivElement>(null);
   useClickOutside(clickOutsideRef, closeModal);
-  const { client, data, error, loading } = useGetCountryQuery({ variables: { code: selectedCountry } });
 
   /** In a real project, this would be good place to present a loading indicator, do graceful error handling, etc. */
   if (loading || error || !data) {

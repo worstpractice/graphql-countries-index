@@ -14,21 +14,18 @@ type Props = {
   countries: ListOfCountries;
 };
 
-const selector = ({ isModalOpen, openModal, setSelectedCountry }: State) => ({
-  isModalOpen,
+const selector = ({ openModal, setSelectedCountry }: State) => ({
   openModal,
   setSelectedCountry,
 });
 
 export const Countries: FC<Props> = ({ client, countries }) => {
-  const { isModalOpen, openModal, setSelectedCountry } = useStore(selector);
+  const { openModal, setSelectedCountry } = useStore(selector);
 
   return (
     <>
       {countries.map(({ code, name, ...countryFacts }) => {
         const handleCardClick = () => {
-          if (isModalOpen) return;
-
           setSelectedCountry(code);
           openModal();
         };
