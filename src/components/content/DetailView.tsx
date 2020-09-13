@@ -7,14 +7,13 @@ import { useClickOutside } from "hooks/useClickOutside";
 import { useStore } from "hooks/useStore";
 import React, { useRef } from "react";
 import type { FC } from "typings/FC";
-import type { Country } from "typings/generated";
 import { blindPick } from "utils/atRandom";
 import styles from "./DetailView.module.css";
 
 type Props = {};
 
 export const DetailView: FC<Props> = () => {
-  const { closeModal, openModal, selectedCountry, setSelectedCountry } = useStore();
+  const { closeModal, selectedCountry } = useStore();
 
   const clickOutsideRef = useRef<HTMLDivElement>(null);
   useClickOutside(clickOutsideRef, closeModal);
@@ -45,18 +44,13 @@ export const DetailView: FC<Props> = () => {
 
   const randomTrio = blindPick(relatedCountries, 3);
 
-  const handleCardClick = (countryCode: Country["code"]) => {
-    setSelectedCountry(countryCode);
-    openModal();
-  };
-
   return (
     <div className={styles.detailView} ref={clickOutsideRef}>
-      <Flag countryCode={selectedCountry} />
+      <Flag code={selectedCountry} country={ownName} />
       <Summary continent={continent.name} country={ownName} />
       <div className={styles.miniResults}>
         <h4>Other countries in {continent.name}</h4>
-        <Countries client={client} countries={randomTrio} onClick={handleCardClick} />
+        <Countries client={client} countries={randomTrio} />
       </div>
       <Tally relatedCountries={relatedCountries.length} />
     </div>

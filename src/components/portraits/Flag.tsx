@@ -5,9 +5,10 @@ import type { Country } from "typings/generated";
 import styles from "./Flag.module.css";
 
 type Props = {
-  countryCode: Country["code"];
+  code: Country["code"];
+  country: Country["name"];
 };
 
-export const Flag: FC<Props> = ({ countryCode }) => {
-  return <img alt={`Flag of ${countryCode}`} className={styles.flag} src={flags[countryCode]} />;
+export const Flag: FC<Props> = ({ code, country }) => {
+  return <img alt={`Flag of ${country}`} className={styles.flag} src={flags[code]} />;
 };

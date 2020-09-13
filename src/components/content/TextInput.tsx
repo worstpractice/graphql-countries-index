@@ -3,11 +3,9 @@ import React, { ChangeEventHandler, useEffect, useRef } from "react";
 import type { FC } from "typings/FC";
 import styles from "./TextInput.module.css";
 
-type Props = {
-  placeholder: string;
-};
+type Props = {};
 
-export const TextInput: FC<Props> = ({ placeholder }) => {
+export const TextInput: FC<Props> = () => {
   const { setSearchTerm, searchTerm } = useStore();
   const inputRef = useRef<HTMLInputElement>(null);
 
@@ -32,7 +30,7 @@ export const TextInput: FC<Props> = ({ placeholder }) => {
       className={styles.textInput}
       id="textInput"
       onChange={handleSearchInput}
-      placeholder={placeholder}
+      placeholder="Search for a country"
       ref={inputRef}
       type="text"
       value={searchTerm}

@@ -29,9 +29,9 @@ export const App: FC<Props> = () => {
         <Pillar size="small" />
         <Main>
           <FlexContainer>
-            <Hero subtitle="Sit Dolor" title="Lorem Ipsum" />
+            <Hero />
             <Search>
-              <TextInput placeholder="Search for a country" />
+              <TextInput />
             </Search>
             <Result />
           </FlexContainer>
