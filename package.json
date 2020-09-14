@@ -58,12 +58,13 @@
   "private": true,
   "scripts": {
     "build": "yarn clean && react-scripts build",
-    "clean": "node ./clean.js",
+    "clean": "node ./scripts/clean.js",
     "codegen": "graphql-codegen && yarn fmt",
     "deploy": "gh-pages -d build",
     "e2e:open": "cypress open",
     "e2e:run": "cypress run",
     "fmt": "prettier -w -u ./src/**/*",
+    "nuke": "node ./scripts/nuke.js && yarn --force --ignore-engines",
     "predeploy": "yarn build",
     "push": "git push && yarn deploy && yarn clean",
     "start": "react-scripts start"
