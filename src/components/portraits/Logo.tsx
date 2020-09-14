@@ -12,7 +12,7 @@ export const Logo: FC<Props> = ({ href = "https://learn2esport.com/" }) => {
   useAbsoluteUrl(href);
 
   return (
-    <div>
+    <div data-cy="Logo">
       <a className={styles.link} href={href} target="_blank" rel="noopener noreferrer">
         <img className={styles.logo} src={logo} alt="Learn2Esports logo" />
       </a>

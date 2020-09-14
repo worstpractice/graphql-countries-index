@@ -8,5 +8,9 @@ type Props = {
 };
 
 export const Main: FC<Props> = ({ children }) => {
-  return <main className={styles.main}>{children}</main>;
+  return (
+    <main className={styles.main} data-cy="Main">
+      {children}
+    </main>
+  );
 };

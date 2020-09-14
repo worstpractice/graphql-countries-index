@@ -8,5 +8,10 @@ type Props = {
 };
 
 export const FullScreenModal: FC<Props> = ({ children }) => {
-  return createPortal(<div className={styles.fullScreenModal}>{children}</div>, document.body);
+  return createPortal(
+    <div className={styles.fullScreenModal} data-cy="FullScreenModal">
+      {children}
+    </div>,
+    document.body,
+  );
 };

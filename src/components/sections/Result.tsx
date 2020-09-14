@@ -35,7 +35,7 @@ export const Result: FC<Props> = () => {
   return (
     <>
       <Tally countries={countries.length} matches={matches.length} />
-      <section className={styles.result}>
+      <section className={styles.result} data-cy="Result">
         <Countries client={client} countries={sortedMatches} />
       </section>
     </>

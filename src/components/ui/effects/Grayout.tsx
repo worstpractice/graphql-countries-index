@@ -8,8 +8,8 @@ type Props = {};
 export const Grayout: FC<Props> = () => {
   return createPortal(
     <>
-      <div className={styles.bottom}></div>
-      <div className={styles.top}></div>
+      <div className={styles.bottom} data-cy="Grayout-bottom"></div>
+      <div className={styles.top} data-cy="Grayout-top"></div>
     </>,
     document.body,
   );

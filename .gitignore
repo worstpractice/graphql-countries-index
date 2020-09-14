@@ -23,3 +23,6 @@ yarn-debug.log*
 yarn-error.log*
 .prettierrc
 .gitignore
+
+cypress/screenshots
+cypress/videos

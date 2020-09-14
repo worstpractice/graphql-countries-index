@@ -22,7 +22,12 @@ export const ContentCard: FC<Props> = ({ children, onInteraction, onMouseOver })
   };
 
   return (
-    <article className={styles.card} onClick={onInteraction} onMouseOver={handleMouseOver} onTouchEnd={onInteraction}>
+    <article
+      className={styles.card}
+      data-cy="ContentCard"
+      onClick={onInteraction}
+      onMouseOver={handleMouseOver}
+      onTouchEnd={onInteraction}>
       {children}
     </article>
   );

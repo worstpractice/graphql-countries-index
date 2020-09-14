@@ -10,5 +10,5 @@ type Props = {
 };
 
 export const Flag: FC<Props> = ({ code, country }) => {
-  return <img alt={`Flag of ${country}`} className={styles.flag} src={flags[code]} />;
+  return <img alt={`Flag of ${country}`} className={styles.flag} data-cy={`Flag-${code}`} src={flags[code]} />;
 };

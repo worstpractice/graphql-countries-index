@@ -12,7 +12,7 @@ type Props = {
 export const Background: FC<Props> = ({ children }) => {
   return createPortal(
     <>
-      <div className={styles.background}></div>
+      <div className={styles.background} data-cy="Background"></div>
       <Grayout />
       <div>{children}</div>
     </>,

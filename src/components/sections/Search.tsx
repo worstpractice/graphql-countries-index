@@ -8,5 +8,9 @@ type Props = {
 };
 
 export const Search: FC<Props> = ({ children }) => {
-  return <section className={styles.search}>{children}</section>;
+  return (
+    <section className={styles.search} data-cy="Search">
+      {children}
+    </section>
+  );
 };

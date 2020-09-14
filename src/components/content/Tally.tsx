@@ -33,7 +33,7 @@ export const Tally: FC<Props> = ({ countries, matches, relatedCountries }) => {
   }
 
   return (
-    <div className={styles.all}>
+    <div className={styles.all} data-cy="Tally">
       <h3>All Countries</h3>
       <p>
         {matches}/{countries}

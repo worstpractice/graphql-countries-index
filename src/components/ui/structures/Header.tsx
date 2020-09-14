@@ -7,5 +7,9 @@ type Props = {
 };
 
 export const Header: FC<Props> = ({ children }) => {
-  return <header className={styles.header}>{children}</header>;
+  return (
+    <header className={styles.header} data-cy="Header">
+      {children}
+    </header>
+  );
 };

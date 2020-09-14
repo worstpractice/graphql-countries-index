@@ -8,5 +8,9 @@ type Props = {
 };
 
 export const FlexContainer: FC<Props> = ({ children }) => {
-  return <div className={styles.flexContainer}>{children}</div>;
+  return (
+    <div className={styles.flexContainer} data-cy="FlexContainer">
+      {children}
+    </div>
+  );
 };

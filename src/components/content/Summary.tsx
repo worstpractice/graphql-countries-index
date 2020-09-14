@@ -29,7 +29,7 @@ export const Summary: FC<Props> = ({ continent, country, facts }) => {
     const summary = summarize(facts);
 
     return (
-      <div className={styles.country}>
+      <div className={styles.country} data-cy="Summary">
         <h3>{country}</h3>
         <p>{summary} </p>
       </div>
@@ -37,7 +37,7 @@ export const Summary: FC<Props> = ({ continent, country, facts }) => {
   }
 
   return (
-    <div className={styles.continent}>
+    <div className={styles.continent} data-cy="Summary">
       <h2>{country}</h2>
       <h3>{continent}</h3>
     </div>

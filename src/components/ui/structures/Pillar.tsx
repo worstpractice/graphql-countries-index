@@ -7,5 +7,5 @@ type Props = {
 };
 
 export const Pillar: FC<Props> = ({ size }) => {
-  return <div className={styles[size]} />;
+  return <div className={styles[size]} data-cy={`Pillar-${size}`} />;
 };

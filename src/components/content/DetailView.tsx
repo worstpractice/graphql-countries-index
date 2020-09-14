@@ -50,7 +50,7 @@ export const DetailView: FC<Props> = () => {
   const randomTrio = blindPick(relatedCountries, 3);
 
   return (
-    <div className={styles.detailView} ref={interactOutsideRef}>
+    <div className={styles.detailView} data-cy="DetailView" ref={interactOutsideRef}>
       <Flag code={selectedCountry} country={ownName} />
       <Summary continent={continent.name} country={ownName} />
       <div className={styles.miniResults}>

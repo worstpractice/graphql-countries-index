@@ -8,5 +8,9 @@ type Props = {
 };
 
 export const GridContainer: FC<Props> = ({ children }) => {
-  return <div className={styles.gridContainer}>{children}</div>;
+  return (
+    <div className={styles.gridContainer} data-cy="GridContainer">
+      {children}
+    </div>
+  );
 };
