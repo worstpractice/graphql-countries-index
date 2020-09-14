@@ -63,8 +63,8 @@
     "deploy": "gh-pages -d build",
     "e2e:open": "cypress open",
     "e2e:run": "cypress run",
-    "fmt:personal": "prettier --loglevel silent -u -w ./src/**/*",
     "fmt:learn2esport": "prettier --no-config -c ./learn2esport/.prettierrc -u -w ./src/**/*",
+    "fmt:personal": "prettier --loglevel silent -u -w ./src/**/*",
     "predeploy": "yarn build",
     "push": "git push && yarn deploy && yarn clean",
     "start": "react-scripts start"
