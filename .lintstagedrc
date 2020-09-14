@@ -1,4 +1,4 @@
 {
-  "*.css": "stylelint --fix",
-  "*": "prettier --no-config -c ./learn2esport/.prettierrc -u -w"
+  "*.css": "yarn stylelint --fix",
+  "*": "yarn prettier --no-config -c ./learn2esport/.prettierrc -u -w"
 }
