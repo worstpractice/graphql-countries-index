@@ -57,7 +57,12 @@ export const DetailView: FC<Props> = () => {
   const randomTrio = blindPick(relatedCountries, 3);
 
   return (
-    <div className={styles.detailView} data-cy="DetailView" ref={interactOutsideRef}>
+    <div
+      aria-label={`Detail view of ${ownName} and related countries in ${continent.name}`}
+      className={styles.detailView}
+      data-cy="DetailView"
+      ref={interactOutsideRef}
+      role="dialog">
       <Flag code={isDetailViewing} country={ownName} />
       <Summary continent={continent.name} country={ownName} />
       <div className={styles.miniResults}>

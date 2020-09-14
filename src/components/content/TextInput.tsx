@@ -29,6 +29,7 @@ export const TextInput: FC<Props> = () => {
 
   return (
     <input
+      aria-label="Search for a country"
       className={styles.textInput}
       data-cy="TextInput"
       inputMode="search"
