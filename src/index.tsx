@@ -8,12 +8,6 @@ import "./styles/reset.module.css";
 
 const root = getElementById("root");
 
-
-
-
-
-
-
 render(
   <StrictMode>
     <Providers>
