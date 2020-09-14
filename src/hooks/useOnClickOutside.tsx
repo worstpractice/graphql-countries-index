@@ -18,6 +18,9 @@ export const useOnClickOutside = (elementRef: RefObject<HTMLDivElement>, handler
 
         /** Consider this click event 'spent' so nested click handlers don't also fire. */
         event.preventDefault();
+        event.stopPropagation();
+        event.stopImmediatePropagation();
+
         handler(event);
       };
 
