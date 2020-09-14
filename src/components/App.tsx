@@ -18,12 +18,12 @@ import type { FC } from "typings/FC";
 
 type Props = {};
 
-const selector = ({ isModalOpen }: State) => ({
-  isModalOpen,
+const selector = ({ isDetailViewing }: State) => ({
+  isDetailViewing,
 });
 
 export const App: FC<Props> = () => {
-  const { isModalOpen } = useStore(selector);
+  const { isDetailViewing } = useStore(selector);
 
   return (
     <Background>
@@ -43,7 +43,7 @@ export const App: FC<Props> = () => {
         </Main>
         <Pillar size="big" />
       </GridContainer>
-      {isModalOpen && (
+      {isDetailViewing && (
         <FullScreenModal>
           <DetailView />
         </FullScreenModal>

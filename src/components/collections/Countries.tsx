@@ -14,20 +14,18 @@ type Props = {
   countries: ListOfCountries;
 };
 
-const selector = ({ openModal, setSelectedCountry }: State) => ({
-  openModal,
-  setSelectedCountry,
+const selector = ({ openDetailViewTo }: State) => ({
+  openDetailViewTo,
 });
 
 export const Countries: FC<Props> = ({ client, countries }) => {
-  const { openModal, setSelectedCountry } = useStore(selector);
+  const { openDetailViewTo } = useStore(selector);
 
   return (
     <>
       {countries.map(({ code, name, ...countryFacts }) => {
         const handleClick = () => {
-          setSelectedCountry(code);
-          openModal();
+          openDetailViewTo(code);
         };
 
         const prefetchCountryData = () => {

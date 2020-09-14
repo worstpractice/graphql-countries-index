@@ -13,18 +13,23 @@ import styles from "./DetailView.module.css";
 
 type Props = {};
 
-const selector = ({ closeModal, selectedCountry }: State) => ({
-  closeModal,
-  selectedCountry,
+const selector = ({ isDetailViewing, openDetailViewTo }: State) => ({
+  isDetailViewing,
+  openDetailViewTo,
 });
 
 export const DetailView: FC<Props> = () => {
-  const { closeModal, selectedCountry } = useStore(selector);
+  const { isDetailViewing, openDetailViewTo } = useStore(selector);
+
+  const closeDetailView = () => {
+    openDetailViewTo("");
+  };
+
   const { client, data, error, loading } = useGetCountryQuery({
-    variables: { code: selectedCountry },
+    variables: { code: isDetailViewing },
   });
   const interactOutsideRef = useRef<HTMLDivElement>(null);
-  useOnClickOutside(interactOutsideRef, closeModal);
+  useOnClickOutside(interactOutsideRef, closeDetailView);
 
   /** In a real project, this would be good place to present a loading indicator, do graceful error handling, etc. */
   if (loading || error || !data) {
@@ -53,7 +58,7 @@ export const DetailView: FC<Props> = () => {
 
   return (
     <div className={styles.detailView} data-cy="DetailView" ref={interactOutsideRef}>
-      <Flag code={selectedCountry} country={ownName} />
+      <Flag code={isDetailViewing} country={ownName} />
       <Summary continent={continent.name} country={ownName} />
       <div className={styles.miniResults}>
         <h4>Other countries in {continent.name}</h4>
