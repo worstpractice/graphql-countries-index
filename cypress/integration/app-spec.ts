@@ -1,79 +1,88 @@
 // type definitions for Cypress object "cy"
 /// <reference types="cypress" />
 
-describe("App", () => {
+const FAKE_COUNTRY = "narnia" as const;
+const REAL_COUNTRY = "antarctica" as const;
+
+const ContentCard = "[data-cy=ContentCard]" as const;
+const DetailView = "[data-cy=DetailView]" as const;
+const FlagOfAntarctica = "[data-cy=Flag-AQ]" as const;
+const Header = "[data-cy=Header]" as const;
+const TextInput = "[data-cy=TextInput]" as const;
+
+describe("Learn2Esport Countries Index", () => {
   beforeEach(() => {
     cy.visit("/");
   });
 
   it("can search for countries by name", () => {
-    cy.get("[data-cy=TextInput]").click().clear().type("antarctica");
+    cy.get(TextInput).click().clear().type(REAL_COUNTRY);
 
-    cy.get("[data-cy=ContentCard]").should("be.visible");
-    cy.get("[data-cy=Flag-AQ]").should("be.visible");
+    cy.get(ContentCard).should("be.visible");
+    cy.get(FlagOfAntarctica).should("be.visible");
   });
 
   it("can input junk without getting results", () => {
-    cy.get("[data-cy=TextInput]").click().clear().type("narnia");
+    cy.get(TextInput).click().clear().type(FAKE_COUNTRY);
 
-    cy.get("[data-cy=ContentCard]").should("not.be.visible");
-    cy.get("[data-cy=Flag-AQ]").should("not.be.visible");
+    cy.get(ContentCard).should("not.be.visible");
+    cy.get(FlagOfAntarctica).should("not.be.visible");
   });
 
   it("can click a card to open the detail view", () => {
-    cy.get("[data-cy=TextInput]").click().clear().type("sweden");
+    cy.get(TextInput).click().clear().type(REAL_COUNTRY);
 
-    cy.get("[data-cy=DetailView]").should("not.be.visible");
+    cy.get(DetailView).should("not.be.visible");
 
-    cy.get("[data-cy=ContentCard]").click();
+    cy.get(ContentCard).click();
 
-    cy.get("[data-cy=DetailView]").should("be.visible");
+    cy.get(DetailView).should("be.visible");
   });
 
   it("can exit detail view", () => {
-    cy.get("[data-cy=TextInput]").click().clear().type("antarctica");
+    cy.get(TextInput).click().clear().type(REAL_COUNTRY);
 
-    cy.get("[data-cy=DetailView]").should("not.be.visible");
+    cy.get(DetailView).should("not.be.visible");
 
-    cy.get("[data-cy=ContentCard]").click();
+    cy.get(ContentCard).click();
 
-    cy.get("[data-cy=DetailView]").should("be.visible");
+    cy.get(DetailView).should("be.visible");
 
-    cy.get("[data-cy=Header]").click({ force: true });
+    cy.get(Header).click({ force: true });
 
-    cy.get("[data-cy=DetailView]").should("not.be.visible");
+    cy.get(DetailView).should("not.be.visible");
   });
 
   it("can clear all results", () => {
-    cy.get("[data-cy=ContentCard]").should("not.be.visible");
-    cy.get("[data-cy=Flag-AQ]").should("not.be.visible");
+    cy.get(ContentCard).should("not.be.visible");
+    cy.get(FlagOfAntarctica).should("not.be.visible");
 
-    cy.get("[data-cy=TextInput]").click().clear().type("antarctica");
+    cy.get(TextInput).click().clear().type(REAL_COUNTRY);
 
-    cy.get("[data-cy=ContentCard]").should("be.visible");
-    cy.get("[data-cy=Flag-AQ]").should("be.visible");
+    cy.get(ContentCard).should("be.visible");
+    cy.get(FlagOfAntarctica).should("be.visible");
 
-    cy.get("[data-cy=TextInput]").click().clear();
+    cy.get(TextInput).click().clear();
 
-    cy.get("[data-cy=ContentCard]").should("not.be.visible");
-    cy.get("[data-cy=Flag-AQ]").should("not.be.visible");
+    cy.get(ContentCard).should("not.be.visible");
+    cy.get(FlagOfAntarctica).should("not.be.visible");
   });
 
   it("can navigate inside the detail view", () => {
-    cy.get("[data-cy=TextInput]").click().clear().type("sweden");
+    cy.get(TextInput).click().clear().type(REAL_COUNTRY);
 
-    cy.get("[data-cy=DetailView]").should("not.be.visible");
+    cy.get(DetailView).should("not.be.visible");
 
-    cy.get("[data-cy=ContentCard]").click();
+    cy.get(ContentCard).click();
 
-    cy.get("[data-cy=DetailView]").should("be.visible");
+    cy.get(DetailView).should("be.visible");
 
-    cy.get("[data-cy=ContentCard]").should("be.visible");
+    cy.get(ContentCard).should("be.visible");
 
-    let times = 5;
+    let navigations = 5;
 
-    while (times--) {
-      cy.get("[data-cy=DetailView]").children().find("[data-cy=ContentCard]").first().click();
+    while (navigations--) {
+      cy.get(DetailView).children().find(ContentCard).first().click();
     }
   });
 });
