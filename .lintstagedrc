@@ -1,5 +1,5 @@
 {
-  "*": "echo hooks seem to work",
+  "*": "prettier --no-config -c ./learn2esport/.prettierrc -u -w",
   "*.css": "stylelint --fix",
-  "*.{css,d.ts,js,jsx,ts,tsx}": "prettier -c ./.prettierrc-learn2esport -u -w"
+  "*.{d.ts,js,jsx,ts,tsx}": "eslint --fix"
 }

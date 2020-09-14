@@ -20,7 +20,9 @@ const selector = ({ closeModal, selectedCountry }: State) => ({
 
 export const DetailView: FC<Props> = () => {
   const { closeModal, selectedCountry } = useStore(selector);
-  const { client, data, error, loading } = useGetCountryQuery({ variables: { code: selectedCountry } });
+  const { client, data, error, loading } = useGetCountryQuery({
+    variables: { code: selectedCountry },
+  });
   const interactOutsideRef = useRef<HTMLDivElement>(null);
   useInteractOutside(interactOutsideRef, closeModal);
 
@@ -50,7 +52,11 @@ export const DetailView: FC<Props> = () => {
   const randomTrio = blindPick(relatedCountries, 3);
 
   return (
-    <div className={styles.detailView} data-cy="DetailView" ref={interactOutsideRef}>
+    <div
+      className={styles.detailView}
+      data-cy="DetailView"
+      ref={interactOutsideRef}
+    >
       <Flag code={selectedCountry} country={ownName} />
       <Summary continent={continent.name} country={ownName} />
       <div className={styles.miniResults}>
