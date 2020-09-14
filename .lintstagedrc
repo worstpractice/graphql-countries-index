@@ -1,4 +1,5 @@
 {
+  "*.{d.ts,ts,tsx}": "eslint --fix",
   "*.css": "stylelint --fix",
-  "*": "prettier -w --print-width 100 --no-semi --no-config --no-editorconfig -u"
+  "*": "prettier -w -u"
 }
