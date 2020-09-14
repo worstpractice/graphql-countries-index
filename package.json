@@ -32,6 +32,7 @@
     "eslint-plugin-cypress": "2.11.1",
     "gh-pages": "^3.1.0",
     "htmlhint": "^0.14.1",
+    "husky": "^4.3.0",
     "prettier": "^2.1.1",
     "react-devtools": "^4.8.2",
     "react-scripts": "3.4.3",
@@ -46,7 +47,16 @@
     "extends": "react-app"
   },
   "homepage": "http://worstpractice.github.io/graphql-countries-index",
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
   "license": "MIT",
+  "lint-staged": {
+    "*.css": "stylelint --fix",
+    "*.{css,d.ts,js,jsx,md,ts,tsx}": "prettier --write"
+  },
   "name": "graphql-countries-index",
   "private": true,
   "scripts": {
