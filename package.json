@@ -53,10 +53,6 @@
     }
   },
   "license": "MIT",
-  "lint-staged": {
-    "*.css": "stylelint --fix",
-    "*.{css,d.ts,js,jsx,md,ts,tsx}": "prettier --write"
-  },
   "name": "graphql-countries-index",
   "private": true,
   "scripts": {
