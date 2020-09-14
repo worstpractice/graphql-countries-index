@@ -14,5 +14,5 @@ render(
       <App />
     </Providers>
   </StrictMode>,
-  root,
+  root
 );
