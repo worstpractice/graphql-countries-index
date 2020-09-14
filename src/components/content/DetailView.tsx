@@ -3,7 +3,7 @@ import { Summary } from "components/content/Summary";
 import { Tally } from "components/content/Tally";
 import { Flag } from "components/portraits/Flag";
 import { useGetCountryQuery } from "hooks/generated";
-import { useInteractOutside } from "hooks/useInteractOutside";
+import { useOnClickOutside } from "hooks/useOnClickOutside";
 import React, { useRef } from "react";
 import type { State } from "store";
 import { useStore } from "store";
@@ -24,7 +24,7 @@ export const DetailView: FC<Props> = () => {
     variables: { code: selectedCountry },
   });
   const interactOutsideRef = useRef<HTMLDivElement>(null);
-  useInteractOutside(interactOutsideRef, closeModal);
+  useOnClickOutside(interactOutsideRef, closeModal);
 
   /** In a real project, this would be good place to present a loading indicator, do graceful error handling, etc. */
   if (loading || error || !data) {

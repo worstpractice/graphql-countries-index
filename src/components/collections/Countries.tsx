@@ -25,7 +25,7 @@ export const Countries: FC<Props> = ({ client, countries }) => {
   return (
     <>
       {countries.map(({ code, name, ...countryFacts }) => {
-        const handleInteraction = () => {
+        const handleClick = () => {
           setSelectedCountry(code);
           openModal();
         };
@@ -35,7 +35,7 @@ export const Countries: FC<Props> = ({ client, countries }) => {
         };
 
         return (
-          <ContentCard onInteraction={handleInteraction} onMouseOver={prefetchCountryData} key={code}>
+          <ContentCard onClick={handleClick} onMouseOver={prefetchCountryData} key={code}>
             <Flag code={code} country={name} />
             <Summary country={name} facts={countryFacts} />
           </ContentCard>
