@@ -1,5 +1,5 @@
 {
-  "*": "prettier --no-config -c ./learn2esport/.prettierrc -u -w",
   "*.css": "stylelint --fix",
-  "*.{d.ts,js,jsx,ts,tsx}": "eslint --fix"
+  "*.{d.ts,js,jsx,ts,tsx}": "eslint --fix",
+  "*": "prettier --no-config -c ./learn2esport/.prettierrc -u -w"
 }
