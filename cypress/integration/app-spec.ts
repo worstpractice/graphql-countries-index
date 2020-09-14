@@ -1,14 +1,14 @@
 // type definitions for Cypress object "cy"
 /// <reference types="cypress" />
 
-const FAKE_COUNTRY = "narnia" as const;
-const REAL_COUNTRY = "antarctica" as const;
+const FAKE_COUNTRY = "narnia";
+const REAL_COUNTRY = "antarctica";
 
-const ContentCard = "[data-cy=ContentCard]" as const;
-const DetailView = "[data-cy=DetailView]" as const;
-const FlagOfAntarctica = "[data-cy=Flag-AQ]" as const;
-const Header = "[data-cy=Header]" as const;
-const TextInput = "[data-cy=TextInput]" as const;
+const ContentCard = "[data-cy=ContentCard]";
+const DetailView = "[data-cy=DetailView]";
+const FlagOfAntarctica = "[data-cy=Flag-AQ]";
+const Header = "[data-cy=Header]";
+const TextInput = "[data-cy=TextInput]";
 
 describe("Learn2Esport Countries Index", () => {
   beforeEach(() => {
