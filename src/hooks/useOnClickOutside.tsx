@@ -1,4 +1,5 @@
-import { RefObject, useEffect } from "react"
+import type { RefObject } from "react"
+import { useEffect } from "react"
 import { addEventListener } from "utils/addEventListener"
 
 /** For when users click outside of some element (e.g: a modal), and you want that "outside click" to gracefully close the modal. */
