@@ -3,7 +3,7 @@ import { createPortal } from "react-dom"
 import type { State } from "store"
 import { useStore } from "store"
 import type { FC } from "typings/FC"
-import { SingleChild } from "typings/SingleChild"
+import type { SingleChild } from "typings/SingleChild"
 import styles from "./FullScreenModal.module.css"
 
 type Props = {

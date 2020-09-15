@@ -1,6 +1,6 @@
 import React from "react"
 import type { FC } from "typings/FC"
-import { MultipleChildren } from "typings/MultipleChildren"
+import type { MultipleChildren } from "typings/MultipleChildren"
 import styles from "./FlexContainer.module.css"
 
 type Props = {

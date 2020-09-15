@@ -1,7 +1,7 @@
 import { ApolloClient, ApolloProvider, InMemoryCache } from "@apollo/client"
 import React from "react"
 import type { FC } from "typings/FC"
-import { SingleChild } from "typings/SingleChild"
+import type { SingleChild } from "typings/SingleChild"
 
 const client = new ApolloClient({
   cache: new InMemoryCache(),

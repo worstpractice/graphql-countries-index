@@ -2,7 +2,7 @@ import { Grayout } from "components/ui/effects/Grayout"
 import React from "react"
 import { createPortal } from "react-dom"
 import type { FC } from "typings/FC"
-import { MultipleChildren } from "typings/MultipleChildren"
+import type { MultipleChildren } from "typings/MultipleChildren"
 import styles from "./Background.module.css"
 
 type Props = {
