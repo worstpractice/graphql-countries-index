@@ -1,10 +1,9 @@
-import type { ReactElement } from "react"
 import React from "react"
 import type { FC } from "typings/FC"
+import { SingleChild } from "typings/SingleChild"
 import styles from "./Main.module.css"
-
 type Props = {
-  children: ReactElement
+  children: SingleChild
 }
 
 export const Main: FC<Props> = ({ children }) => {

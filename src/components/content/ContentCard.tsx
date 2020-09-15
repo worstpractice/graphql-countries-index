@@ -1,10 +1,11 @@
-import type { MouseEventHandler, ReactElement } from "react"
+import type { MouseEventHandler } from "react"
 import React, { useState } from "react"
 import type { FC } from "typings/FC"
+import type { MultipleChildren } from "typings/MultipleChildren"
 import styles from "./ContentCard.module.css"
 
 type Props = {
-  children: ReactElement
+  children: MultipleChildren
   onClick?: () => void
   onMouseOver?: () => void
 }

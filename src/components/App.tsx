@@ -12,19 +12,11 @@ import { Header } from "components/ui/structures/Header"
 import { Main } from "components/ui/structures/Main"
 import { Pillar } from "components/ui/structures/Pillar"
 import React from "react"
-import type { State } from "store"
-import { useStore } from "store"
 import type { FC } from "typings/FC"
 
 type Props = {}
 
-const selector = ({ isDetailViewing }: State) => ({
-  isDetailViewing,
-})
-
 export const App: FC<Props> = () => {
-  const { isDetailViewing } = useStore(selector)
-
   return (
     <Background>
       <GridContainer>
@@ -43,11 +35,9 @@ export const App: FC<Props> = () => {
         </Main>
         <Pillar size="big" />
       </GridContainer>
-      {isDetailViewing && (
-        <FullScreenModal>
-          <DetailView />
-        </FullScreenModal>
-      )}
+      <FullScreenModal>
+        <DetailView />
+      </FullScreenModal>
     </Background>
   )
 }

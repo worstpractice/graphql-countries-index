@@ -1,7 +1,7 @@
 import { ApolloClient, ApolloProvider, InMemoryCache } from "@apollo/client"
-import type { ReactElement } from "react"
 import React from "react"
 import type { FC } from "typings/FC"
+import { SingleChild } from "typings/SingleChild"
 
 const client = new ApolloClient({
   cache: new InMemoryCache(),
@@ -10,7 +10,7 @@ const client = new ApolloClient({
 })
 
 type Props = {
-  children: ReactElement
+  children: SingleChild
 }
 
 /** Little-known fact: this added level of indirection (instantiating all context

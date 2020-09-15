@@ -1,10 +1,10 @@
-import type { ReactElement } from "react"
 import React from "react"
 import type { FC } from "typings/FC"
+import { SingleChild } from "typings/SingleChild"
 import styles from "./Search.module.css"
 
 type Props = {
-  children: ReactElement
+  children: SingleChild
 }
 
 export const Search: FC<Props> = ({ children }) => {
