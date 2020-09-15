@@ -1,10 +1,10 @@
-import type { ReactNode } from "react"
+import type { ReactElement } from "react"
 import React from "react"
 import type { FC } from "typings/FC"
 import styles from "./FlexContainer.module.css"
 
 type Props = {
-  children: ReactNode
+  children: ReactElement
 }
 
 export const FlexContainer: FC<Props> = ({ children }) => {

@@ -1,10 +1,10 @@
-import React, { ReactNode } from "react"
+import React, { ReactElement } from "react"
 import { createPortal } from "react-dom"
 import type { FC } from "typings/FC"
 import styles from "./FullScreenModal.module.css"
 
 type Props = {
-  children: ReactNode
+  children: ReactElement
 }
 
 export const FullScreenModal: FC<Props> = ({ children }) => {

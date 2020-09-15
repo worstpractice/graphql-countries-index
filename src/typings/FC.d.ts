@@ -13,11 +13,11 @@ import type { ReactElement, ValidationMap, WeakValidationMap } from "react"
  *  - we can rely on there being children passed where expected.
  *
  * @example
- * import type { ReactNode } from "react";
+ * import type { ReactElement } from "react";
  * import type { FC } from "typings/FC";
  *
  * type Props = {
- *   children: ReactNode; // NOTE: Not optional unless you make it
+ *   children: ReactElement; // NOTE: Not optional unless you make it
  * };
  */
 export type FC<P extends object> = {

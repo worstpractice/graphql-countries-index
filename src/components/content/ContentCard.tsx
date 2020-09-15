@@ -1,10 +1,10 @@
-import type { MouseEventHandler, ReactNode } from "react"
+import type { MouseEventHandler, ReactElement } from "react"
 import React, { useState } from "react"
 import type { FC } from "typings/FC"
 import styles from "./ContentCard.module.css"
 
 type Props = {
-  children: ReactNode
+  children: ReactElement
   onClick?: () => void
   onMouseOver?: () => void
 }
