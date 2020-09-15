@@ -11,12 +11,11 @@
 }
 
 .top {
-  background-image:
-    linear-gradient(
-      to bottom,
-      var(--color-background-gradient-top),
-      var(--color-background-gradient-bottom)
-    );
+  background-image: linear-gradient(
+    to bottom,
+    var(--color-background-gradient-top),
+    var(--color-background-gradient-bottom)
+  );
   bottom: 51vh;
   height: 51vh;
   left: 0;

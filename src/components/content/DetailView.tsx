@@ -1,60 +1,60 @@
-import { Countries } from "components/collections/Countries";
-import { Summary } from "components/content/Summary";
-import { Tally } from "components/content/Tally";
-import { Flag } from "components/portraits/Flag";
-import { useGetCountryQuery } from "hooks/generated";
-import { useOnClickOutside } from "hooks/useOnClickOutside";
-import React, { useRef } from "react";
-import type { State } from "store";
-import { useStore } from "store";
-import type { FC } from "typings/FC";
-import { blindPick } from "utils/blindPick";
-import styles from "./DetailView.module.css";
+import { Countries } from "components/collections/Countries"
+import { Summary } from "components/content/Summary"
+import { Tally } from "components/content/Tally"
+import { Flag } from "components/portraits/Flag"
+import { useGetCountryQuery } from "hooks/generated"
+import { useOnClickOutside } from "hooks/useOnClickOutside"
+import React, { useRef } from "react"
+import type { State } from "store"
+import { useStore } from "store"
+import type { FC } from "typings/FC"
+import { blindPick } from "utils/blindPick"
+import styles from "./DetailView.module.css"
 
-type Props = {};
+type Props = {}
 
 const selector = ({ isDetailViewing, openDetailViewTo }: State) => ({
   isDetailViewing,
   openDetailViewTo,
-});
+})
 
 export const DetailView: FC<Props> = () => {
-  const { isDetailViewing, openDetailViewTo } = useStore(selector);
+  const { isDetailViewing, openDetailViewTo } = useStore(selector)
 
   const closeDetailView = () => {
-    openDetailViewTo("");
-  };
+    openDetailViewTo("")
+  }
 
   const { client, data, error, loading } = useGetCountryQuery({
     variables: { code: isDetailViewing },
-  });
-  const interactOutsideRef = useRef<HTMLDivElement>(null);
-  useOnClickOutside(interactOutsideRef, closeDetailView);
+  })
+  const interactOutsideRef = useRef<HTMLDivElement>(null)
+  useOnClickOutside(interactOutsideRef, closeDetailView)
 
   /** In a real project, this would be good place to present a loading indicator, do graceful error handling, etc. */
   if (loading || error || !data) {
-    return null;
+    return null
   }
 
-  const { country } = data;
+  const { country } = data
 
   if (!country) {
-    return null;
+    return null
   }
 
-  const { name: ownName, continent } = country;
+  const { name: ownName, continent } = country
 
-  const { countries } = continent;
+  const { countries } = continent
 
   if (!countries) {
-    return null;
+    return null
   }
 
   const relatedCountries = countries.filter(function byName({ name }) {
-    return name !== ownName;
-  });
+    return name !== ownName
+  })
 
-  const randomTrio = blindPick(relatedCountries, 3);
+  const randomTrio = blindPick(relatedCountries, 3)
 
   return (
     <div
@@ -62,7 +62,8 @@ export const DetailView: FC<Props> = () => {
       className={styles.detailView}
       data-cy="DetailView"
       ref={interactOutsideRef}
-      role="dialog">
+      role="dialog"
+    >
       <Flag code={isDetailViewing} country={ownName} />
       <Summary continent={continent.name} country={ownName} />
       <div className={styles.miniResults}>
@@ -71,5 +72,5 @@ export const DetailView: FC<Props> = () => {
       </div>
       <Tally relatedCountries={relatedCountries.length} />
     </div>
-  );
-};
+  )
+}

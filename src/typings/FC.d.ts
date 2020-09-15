@@ -1,4 +1,4 @@
-import type { ReactElement, ValidationMap, WeakValidationMap } from "react";
+import type { ReactElement, ValidationMap, WeakValidationMap } from "react"
 
 /** The regular `FC` type, sans `PropsWithChildren`.
  *
@@ -21,9 +21,9 @@ import type { ReactElement, ValidationMap, WeakValidationMap } from "react";
  * };
  */
 export type FC<P extends object> = {
-  (props: P, context?: any): ReactElement<any, any> | null;
-  propTypes?: WeakValidationMap<P>;
-  contextTypes?: ValidationMap<any>;
-  defaultProps?: Partial<P>;
-  displayName?: string;
-};
+  (props: P, context?: any): ReactElement<any, any> | null
+  propTypes?: WeakValidationMap<P>
+  contextTypes?: ValidationMap<any>
+  defaultProps?: Partial<P>
+  displayName?: string
+}

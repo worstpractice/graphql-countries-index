@@ -63,7 +63,7 @@
     "deploy": "gh-pages -d build",
     "e2e:open": "cypress open",
     "e2e:run": "cypress run",
-    "fmt": "prettier -w -u ./src/**/*",
+    "fmt": "prettier -w -u ./{cypress,scripts,src}/**/*",
     "nuke": "node ./scripts/nuke.js && yarn --force --ignore-engines",
     "predeploy": "yarn build",
     "push": "git push && yarn deploy && yarn clean",

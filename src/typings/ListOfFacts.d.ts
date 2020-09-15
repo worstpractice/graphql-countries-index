@@ -1,6 +1,6 @@
-import type { Continent, Country, Language } from "typings/generated";
+import type { Continent, Country, Language } from "typings/generated"
 
 type ListOfFacts = Pick<Country, "capital" | "currency"> & {
-  continent: Pick<Continent, "name">;
-  languages: readonly Pick<Language, "name">[];
-};
+  continent: Pick<Continent, "name">
+  languages: readonly Pick<Language, "name">[]
+}
