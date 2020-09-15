@@ -28,8 +28,9 @@ export const DetailView: FC<Props> = () => {
   const { client, data, error, loading } = useGetCountryQuery({
     variables: { code: isDetailViewing },
   })
-  const interactOutsideRef = useRef<HTMLDivElement>(null)
-  useOnClickOutside(interactOutsideRef, closeDetailView)
+
+  const onClickOutsideRef = useRef<HTMLDivElement>(null)
+  useOnClickOutside(onClickOutsideRef, closeDetailView)
 
   /** In a real project, this would be good place to present a loading indicator, do graceful error handling, etc. */
   if (loading || error || !data) {
@@ -61,7 +62,7 @@ export const DetailView: FC<Props> = () => {
       aria-label={`Detail view of ${ownName} and related countries in ${continent.name}`}
       className={styles.detailView}
       data-cy="DetailView"
-      ref={interactOutsideRef}
+      ref={onClickOutsideRef}
       role="dialog"
     >
       <Flag code={isDetailViewing} country={ownName} />
