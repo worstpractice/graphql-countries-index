@@ -1,4 +1,4 @@
-import { gql } from "@apollo/client"
+import { gql } from "@apollo/client";
 
 export const countryDetailsFragment = gql`
   fragment countryDetails on Country {
@@ -13,7 +13,7 @@ export const countryDetailsFragment = gql`
     }
     name
   }
-`
+`;
 
 export const relatedCountriesDetailsFragment = gql`
   fragment relatedCountriesDetails on Country {
@@ -25,4 +25,4 @@ export const relatedCountriesDetailsFragment = gql`
     }
   }
   ${countryDetailsFragment}
-`
+`;

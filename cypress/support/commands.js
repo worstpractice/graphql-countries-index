@@ -1,5 +1,5 @@
 // eslint-disable-next-line strict
-"use strict"
+"use strict";
 // ***********************************************
 // This example commands.js shows you how to
 // create various custom commands and overwrite

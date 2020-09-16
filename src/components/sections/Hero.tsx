@@ -1,8 +1,8 @@
-import React from "react"
-import type { FC } from "typings/FC"
-import styles from "./Hero.module.css"
+import React from "react";
+import type { FC } from "typings/FC";
+import styles from "./Hero.module.css";
 
-type Props = {}
+type Props = {};
 
 export const Hero: FC<Props> = () => {
   return (
@@ -12,5 +12,5 @@ export const Hero: FC<Props> = () => {
         <h5 className={styles.subtitle}>Sit Dolor</h5>
       </div>
     </section>
-  )
-}
+  );
+};

@@ -1,5 +1,5 @@
 // eslint-disable-next-line strict
-"use strict"
+"use strict";
 // ***********************************************************
 // This example plugins/index.js can be used to load plugins
 //
@@ -13,10 +13,10 @@
 // This function is called when a project is opened or re-opened (e.g. due to
 // the project's config changing)
 
-const cypressTypeScriptPreprocessor = require("./cy-ts-preprocessor")
+const cypressTypeScriptPreprocessor = require("./cy-ts-preprocessor");
 
 module.exports = (on) => {
   // `on` is used to hook into various events Cypress emits
   // `config` is the resolved Cypress confi
-  on("file:preprocessor", cypressTypeScriptPreprocessor)
-}
+  on("file:preprocessor", cypressTypeScriptPreprocessor);
+};

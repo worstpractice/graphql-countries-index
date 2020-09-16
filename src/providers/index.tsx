@@ -1,17 +1,17 @@
-import { ApolloClient, ApolloProvider, InMemoryCache } from "@apollo/client"
-import React from "react"
-import type { FC } from "typings/FC"
-import type { SingleChild } from "typings/SingleChild"
+import { ApolloClient, ApolloProvider, InMemoryCache } from "@apollo/client";
+import React from "react";
+import type { FC } from "typings/FC";
+import type { SingleChild } from "typings/SingleChild";
 
 const client = new ApolloClient({
   cache: new InMemoryCache(),
   connectToDevTools: true,
   uri: "https://countries.trevorblades.com/graphql",
-})
+});
 
 type Props = {
-  children: SingleChild
-}
+  children: SingleChild;
+};
 
 /** Little-known fact: this added level of indirection (instantiating all context
  * providers above the actual `App` component in the tree) is strictly necessary
@@ -21,5 +21,5 @@ type Props = {
  *
  * Video demonstration: https://www.youtube.com/watch?v=CDGBTjMBJzg */
 export const Providers: FC<Props> = ({ children }) => {
-  return <ApolloProvider client={client}>{children}</ApolloProvider>
-}
+  return <ApolloProvider client={client}>{children}</ApolloProvider>;
+};

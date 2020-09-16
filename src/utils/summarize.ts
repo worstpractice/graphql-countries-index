@@ -1,4 +1,4 @@
-import type { ListOfFacts } from "typings/ListOfFacts"
+import type { ListOfFacts } from "typings/ListOfFacts";
 
 export const summarize = ({ capital, continent, currency, languages }: ListOfFacts) => {
   const safetyNet = [
@@ -6,11 +6,11 @@ export const summarize = ({ capital, continent, currency, languages }: ListOfFac
     continent?.name ?? "",
     currency ? currency.split(",")[0] : "",
     languages?.[0]?.name ?? "",
-  ] as const
+  ] as const;
 
-  const facts = safetyNet.filter(Boolean)
+  const facts = safetyNet.filter(Boolean);
 
-  const summary = facts.join(" ● ")
+  const summary = facts.join(" ● ");
 
-  return summary
-}
+  return summary;
+};

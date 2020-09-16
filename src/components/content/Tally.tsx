@@ -1,6 +1,6 @@
-import React from "react"
-import type { FC } from "typings/FC"
-import styles from "./Tally.module.css"
+import React from "react";
+import type { FC } from "typings/FC";
+import styles from "./Tally.module.css";
 
 /** This is one way to express an XOR relationship in TypeScript.
  *
@@ -11,25 +11,25 @@ import styles from "./Tally.module.css"
  * And never both, and never neither. <3 */
 type Props =
   | {
-      countries: number
-      matches: number
-      relatedCountries?: never
+      countries: number;
+      matches: number;
+      relatedCountries?: never;
     }
   | {
-      countries?: never
-      matches?: never
-      relatedCountries: number
-    }
+      countries?: never;
+      matches?: never;
+      relatedCountries: number;
+    };
 
 export const Tally: FC<Props> = ({ countries, matches, relatedCountries }) => {
   if (relatedCountries) {
-    let others = relatedCountries - 4
+    let others = relatedCountries - 4;
 
     if (others < 0) {
-      others = 0
+      others = 0;
     }
 
-    return <h3 className={styles.related}>{others}+ more</h3>
+    return <h3 className={styles.related}>{others}+ more</h3>;
   }
 
   return (
@@ -39,5 +39,5 @@ export const Tally: FC<Props> = ({ countries, matches, relatedCountries }) => {
         {matches}/{countries}
       </p>
     </div>
-  )
-}
+  );
+};

@@ -1,5 +1,5 @@
-import { gql } from "@apollo/client"
-import { countryDetailsFragment, relatedCountriesDetailsFragment } from "./fragments"
+import { gql } from "@apollo/client";
+import { countryDetailsFragment, relatedCountriesDetailsFragment } from "./fragments";
 
 export const GetCountries = gql`
   query GetCountries {
@@ -8,7 +8,7 @@ export const GetCountries = gql`
     }
   }
   ${countryDetailsFragment}
-`
+`;
 
 export const GetCountry = gql`
   query GetCountry($code: ID!) {
@@ -23,4 +23,4 @@ export const GetCountry = gql`
     }
   }
   ${relatedCountriesDetailsFragment}
-`
+`;

@@ -5,13 +5,13 @@
  *
  * See: https://mariusschulz.com/articles/the-never-type-in-typescript */
 export const getElementById = (id: string): HTMLElement | never => {
-  const element = document.getElementById(id)
+  const element = document.getElementById(id);
 
   if (!element) {
     throw new ReferenceError(
-      `Could not locate DOM element with ID "${id}"! This might indicate a problem in the HTML file.`
-    )
+      `Could not locate DOM element with ID "${id}"! This might indicate a problem in the HTML file.`,
+    );
   }
 
-  return element
-}
+  return element;
+};
